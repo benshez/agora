@@ -1,20 +1,35 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "module": "es2015",
-    "moduleResolution": "node",
-    "baseUrl": "./",
-    "paths": {
-      "*": [
-        "./node_modules/tns-core-modules/*",
-        "./node_modules/*"
-      ]
-    }
-  },
-  "exclude": [
-    "**/*.tns.ts",
-    "**/*.android.ts",
-    "**/*.ios.ts",
-    "app/main.aot.ts"
-  ]
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "module": "es2015",
+        "moduleResolution": "node",
+        "baseUrl": "./src/",
+        "paths": {
+            "*": [
+                "../node_modules/tns-core-modules/*",
+                "../node_modules/*"
+            ],
+            "@agora": [
+                "app/*"
+            ],
+            "@views/*": [
+                "app/views/*"
+            ],
+            "@components/*": [
+                "app/components/*"
+            ],
+            "@common/*": [
+                "app/common/*"
+            ],
+            "@shared/*": [
+                "app/shared/*"
+            ]
+        }
+    },
+    "exclude": [
+        "**/*.tns.ts",
+        "**/*.android.ts",
+        "**/*.ios.ts",
+        "app/main.aot.ts"
+    ]
 }

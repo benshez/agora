@@ -7,4 +7,10 @@ import { COMPONENT_MODULES, COMPONENT_DECLARATIONS } from '@components/header/co
     declarations: [...COMPONENT_DECLARATIONS],
     schemas: [NO_ERRORS_SCHEMA]
 })
-export class HeaderModule { }
+export class HeaderModule {
+    static forRoot() {
+        return {
+            ngModule: HeaderModule
+        };
+    }
+}

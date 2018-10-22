@@ -2,7 +2,7 @@ import { By } from '@angular/platform-browser';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, Input } from '@angular/core';
 import { MenuComponent } from './component';
-import { IAppRoute } from '../../../common/utils/interfaces/IAppRoute';
+import { IAppRoute } from '../../../../common/utils/interfaces/IAppRoute';
 
 @Component({
     selector: 'agora-menu-item',

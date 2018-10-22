@@ -13,4 +13,4 @@ import {
     exports: [...COMPONENT_EXPORTS],
     entryComponents: [...COMPONENT_ENTRY]
 })
-export class UserModule { }
+export class LoginModule { }
