@@ -1,0 +1,13 @@
+@import '../../../../../assets/styles/colors';
+
+:host {
+    display: block;
+
+    a {
+        display: block;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        outline: none;
+        color: $primary--color;
+    }
+}

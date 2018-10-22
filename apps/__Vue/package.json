@@ -1,0 +1,48 @@
+{
+  "name": "vue-webpack4",
+  "version": "1.0.0",
+  "description": "Vue js with Webpack project setup",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --mode development --config ./build/web/webpack.config.js",
+    "prod": "webpack --mode production",
+    "build:dev": "npm run clean && webpack --mode development --config ./build/web/webpack.config.js",
+    "clean": "rimraf ./dist"
+  },
+  "keywords": [
+    "Vue",
+    "js",
+    "Webpack"
+  ],
+  "author": "Krunal Lathiya",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^9.4.6",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-3": "6.24.1",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "vue-loader": "^14.2.1",
+    "vue-template-compiler": "^2.5.15",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7",
+    "ts-loader": "^4.5.0",
+    "typescript": "^2.8.1",
+    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template": "^6.2.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "node-sass": "^4.9.0",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11"
+  },
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
+}

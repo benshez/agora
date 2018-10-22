@@ -1,0 +1,49 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es5",
+        "typeRoots": [
+            "node_modules/@types",
+            "types"
+        ],
+        "baseUrl": "./src/",
+        "paths": {
+            "@agora": [
+                "app/*"
+            ],
+            "@views/*": [
+                "app/views/*"
+            ],
+            "@components/*": [
+                "app/components/*"
+            ],
+            "@common/*": [
+                "app/common/*"
+            ],
+            "@shared/*": [
+                "app/shared/*"
+            ]
+        },
+        "lib": [
+            "es2016",
+            "dom"
+        ],
+        "module": "es2015"
+    },
+    "include": [
+        "types/app.module.ngfactory.d.ts",
+        "types/references.d.ts",
+        "types/typings.d.ts",
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}

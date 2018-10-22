@@ -1,0 +1,149 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import './mixins', './loading';
+
+@include mat-core();
+
+$agora-app-primary: mat-palette($mat-indigo);
+$agora-app-accent: mat-palette($mat-pink, A200, A100, A400);
+$agora-app-warn: mat-palette($mat-red);
+$agora-app-theme: mat-light-theme(
+    $agora-app-primary,
+    $agora-app-accent,
+    $agora-app-warn
+);
+
+@include angular-material-theme($agora-app-theme);
+body {
+    @include font-roboto(16px, $text--color);
+    overflow: hidden;
+    margin: 0;
+}
+a {
+    cursor: pointer;
+}
+
+snack-bar-container {
+    background: $primary--color !important;
+}
+
+.mat-sidenav {
+    &.shadow {
+        -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.28);
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.28);
+    }
+}
+.cdk-overlay-container {
+    .cdk-overlay-pane {
+        .mat-menu-panel {
+            .mat-menu-content {
+                background: $secondary--color;
+                padding: 0;
+                .mat-menu-item {
+                    color: $text--color;
+                    font-weight: 100;
+
+                    &:not(:last-child) {
+                        border-bottom: 1px solid $light-grey;
+                    }
+                }
+            }
+        }
+    }
+}
+.mat-toolbar {
+    .mat-toolbar-row {
+        background-color: $secondary--color;
+        .mat-icon-button {
+            color: $text--color;
+            opacity: 0.78;
+        }
+    }
+}
+.mat-menu-item,
+.mat-menu-item .mat-icon {
+    color: $grey;
+    font-weight: 100;
+}
+.mat-raised-button[disabled] {
+    background: $grey !important;
+}
+.mat-dialog-container {
+    background: $primary--color;
+    color: $secondary--color;
+}
+.mat-drawer-container {
+    position: absolute !important;
+    top: 4rem;
+    bottom: 0;
+    overflow: auto;
+    width: 100%;
+    color: $text--color;
+    background-color: $secondary--color;
+
+    .mat-drawer {
+        &::-webkit-scrollbar {
+            width: 0.5rem;
+            height: 1rem;
+            background-color: $grey;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-clip: padding-box;
+            background-color: $light-grey;
+            border: 0 solid transparent;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            min-height: 1.5rem;
+        }
+        &::-webkit-scrollbar-track {
+            border: 0 solid transparent;
+            background-clip: padding-box;
+            background-color: transparent;
+        }
+        &:not(.mat-drawer-side) {
+            box-shadow: none;
+        }
+    }
+}
+.container {
+    margin: calculateRem(24px) calculateRem(24px) 0 calculateRem(24px);
+    .mat-card {
+        padding: calculateRem(24px);
+        margin-bottom: calculateRem(24px);
+        .mat-card-title {
+            background: rgba(0, 0, 0, 0.03);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem calculateRem(24px);
+            height: calculateRem(24px);
+        }
+        .mat-card-content {
+            margin-top: 4rem;
+        }
+    }
+}
+.mat-dialog-content {
+    text-align: center;
+    padding: 1rem calculateRem(24px) !important;
+}
+.mat-dialog-title {
+    text-align: center;
+}
+.mat-list-avatar {
+    height: calculateRem(55px) !important;
+    width: calculateRem(55px) !important;
+}
+.mat-card-image {
+    margin-bottom: -28px !important;
+    border-top: 1px solid $light-grey;
+}
+#search-input {
+    .mat-form-field-label {
+        color: white !important;
+    }
+    .mat-form-field-underline {
+        background-color: white !important;
+    }
+}

@@ -1,0 +1,16 @@
+.DS_Store
+
+*.js.map
+
+!app/samples/*.js
+
+node_modules/
+platforms/
+hooks/
+lib
+
+tns/platforms
+tns/node_modules
+tns/app/tns_modules
+dist-native
+dist-web

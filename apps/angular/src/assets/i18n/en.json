@@ -1,0 +1,42 @@
+{
+    "angularExampleApp": "Angular example application",
+    "menu": {
+        "home": "Home",
+        "about": "About",
+        "login": "Login / register",
+        "claims": "Claims",
+        "resubs": "Resubmission date",
+        "changePayments": "Change payment date"
+    },
+    "home": {
+        "title": "Home",
+        "description": "This component is part of a module that was directly imported into the main AppModule."
+    },
+    "about": {
+        "title": "About",
+        "description": "This component was rendered from a lazy-loaded module."
+    },
+    "login": {
+        "title": "Login",
+        "description": "Please login."
+    },
+    "register": {
+        "title": "Register",
+        "description": "Please register."
+    },
+    "claims": {
+        "title": "Claims",
+        "description": "Start a claim."
+    },
+    "resubs": {
+        "title": "Resubmissions",
+        "description": "Resub here."
+    },
+    "changePayments": {
+        "title": "Change Payments",
+        "description": "Please change your paymemts."
+    },
+    "phone": {
+        "edition": "Phone Edition!"
+    }
+}

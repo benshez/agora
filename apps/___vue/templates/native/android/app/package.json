@@ -1,0 +1,7 @@
+{
+  "android": {
+    "v8Flags": "--expose_gc"
+  },
+  "name": "agora",
+  "version": "1.0.0"
+}

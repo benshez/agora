@@ -1,0 +1,21 @@
+.DS_Store
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
+# All public js files
+public/**/*.js
+
+# All src js files
+src/**/*.js
+
+# All private
+src/common/modules/core/private/**/*.ts
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

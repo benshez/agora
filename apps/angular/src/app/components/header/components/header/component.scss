@@ -1,0 +1,38 @@
+@import '../../../../../assets/styles/colors';
+
+:host() {
+    display: block;
+    position: relative;
+
+    &.shadow {
+        -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+            0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+            0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    }
+
+    .mat-toolbar {
+        background-color: $secondary--color;
+        &.mat-toolbar-multiple-rows {
+            height: 4rem;
+            padding: 0.5rem;
+            border-bottom: solid 0.01rem $light-grey;
+        }
+        .mat-toolbar-row {
+            position: relative;
+            height: auto;
+            padding: 0.5rem 1rem;
+
+            .mat-progress-bar {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                display: none;
+            }
+        }
+    }
+}
+
+.matmenu-fill-space {
+    flex: 1 1 auto;
+}

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "apis"
+		},
+		{
+			"path": "apps"
+		}
+	],
+	"settings": {
+		"terminal.integrated.scrollback": 50000
+	}
+}

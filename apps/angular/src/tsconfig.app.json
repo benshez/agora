@@ -1,0 +1,37 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../out-tsc/app",
+        "moduleResolution": "node",
+        "module": "es2015",
+        "types": [],
+        "baseUrl": "./app/",
+        "paths": {
+            "@agora": [
+                "./*"
+            ],
+            "@views/*": [
+                "views/*"
+            ],
+            "@components/*": [
+                "components/*"
+            ],
+            "@common/*": [
+                "common/*"
+            ],
+            "@shared/*": [
+                "shared/*"
+            ]
+        }
+    },
+    "exclude": [
+        "test.ts",
+        "**/*.spec.ts",
+        "**/*.tns.*",
+        "**/*.tns.ts",
+        "**/*.android.ts",
+        "**/*.ios.ts",
+        "./main.ns.aot.ts",
+        "./main.ns.ts"
+    ]
+}
