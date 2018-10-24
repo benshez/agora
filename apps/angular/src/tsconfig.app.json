@@ -4,9 +4,11 @@
         "outDir": "../out-tsc/app",
         "moduleResolution": "node",
         "module": "es2015",
-        "types": [],
         "baseUrl": "./app/",
         "paths": {
+            "@assets/*": [
+                "../assets/*"
+            ],
             "@agora": [
                 "./*"
             ],

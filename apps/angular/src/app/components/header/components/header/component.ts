@@ -5,7 +5,8 @@ import { Config } from '@common/utils/Config';
 import { IAppRoute } from '@common/utils/interfaces/IAppRoute';
 import { ProgressBarService } from '@shared/services/bar/service';
 
-declare const require: any;
+declare var require: NodeRequire;
+declare var __DEBUG_MODE__: any;
 
 @Component({
     moduleId: module.id,
