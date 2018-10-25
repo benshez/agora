@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Title } from '@angular/platform-browser'
 import { TranslateService } from '@ngx-translate/core';
 
 import { Config } from '@common/utils/Config';
@@ -23,7 +24,8 @@ export class HeaderComponent implements OnInit {
 
     constructor(
         private progressBarService: ProgressBarService,
-        private translateService: TranslateService
+        private translateService: TranslateService,
+        private titleService: Title
     ) { }
 
     ngOnInit() {
@@ -44,10 +46,17 @@ export class HeaderComponent implements OnInit {
         );
         this.translateService.use(language).subscribe(() => {
             this.loadMenus();
+            this.onChangeTitle();
         });
     }
 
     private loadMenus(): void {
         this.menuItems = Config.ROUTES();
+    }
+
+    private onChangeTitle(): void {
+        this.translateService.get('AgoraApp').subscribe((res: string) => {
+            this.titleService.setTitle(res);
+        });
     }
 }
