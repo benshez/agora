@@ -46,7 +46,7 @@ export class Config {
             {
                 url: '/finance-payments',
                 name: 'finance-payments',
-                description: 'menu.changePayments'
+                description: 'menu.finance-payments'
             },
             {
                 url: '/login',

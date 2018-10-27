@@ -1,14 +1,10 @@
-import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
-import { NativeScriptFormsModule } from 'nativescript-angular/forms';
+import { AgoraCommonModule } from '@common/module.tns';
 
 @NgModule({
-    declarations: [],
     exports: [
-        NativeScriptModule,
-        NativeScriptFormsModule
+        AgoraCommonModule
     ],
-    schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class SharedModule { }

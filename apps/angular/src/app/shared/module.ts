@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
-import { MaterialModule } from '@shared/modules/material/module';
+import { AgoraCommonModule } from '@common/module';
 
 @NgModule({
-    imports: [CommonModule],
-    declarations: [],
-    exports: [CommonModule, FormsModule, MaterialModule]
+    exports: [AgoraCommonModule]
 })
 export class SharedModule { }

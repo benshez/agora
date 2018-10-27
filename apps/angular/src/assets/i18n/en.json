@@ -6,7 +6,7 @@
         "login": "Login / register",
         "claims": "Claims",
         "resubs": "Resubmission date",
-        "changePayments": "Change payment date"
+        "finance-payments": "Change payment date"
     },
     "home": {
         "title": "Home",
@@ -24,15 +24,15 @@
         "title": "Register",
         "description": "Please register."
     },
-    "claims": {
+    "claims-create": {
         "title": "Claims",
         "description": "Start a claim."
     },
-    "resubs": {
+    "finance-resubs": {
         "title": "Resubmissions",
         "description": "Resub here."
     },
-    "changePayments": {
+    "finance-payments": {
         "title": "Change Payments",
         "description": "Please change your paymemts."
     },
