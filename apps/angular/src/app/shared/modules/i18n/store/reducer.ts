@@ -20,7 +20,7 @@ export function reducer(
             return service.FILTER_LANGUAGE(service.GET_DEFAULT_LANGUAGE());
 
         case GET_LANGUAGE:
-            return { ...state, Lang: actions.GetLanguage.ps\ };
+            return { ...state, Lang: actions.GetLanguage };
 
         case UPDATE_LANGUAGE:
             return service.FILTER_LANGUAGE('en');
