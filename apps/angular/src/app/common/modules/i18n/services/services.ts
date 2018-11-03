@@ -4,12 +4,12 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
-import {
-    Analytics,
-    AnalyticsService
-} from '@common/modules/analytics/index';
+// import {
+//     Analytics,
+//     AnalyticsService
+// } from '@common/modules/analytics/index';
 import { ILanguage } from '@common/modules/i18n/interfaces/index';
-import { WindowService } from '@common/services/window/window.service';
+import { WindowService } from '@common/services/window/service';
 import { I18NState } from '@common/modules/i18n/interfaces/index';
 import { IAppState } from '@common/modules/app/interfaces/index';
 import { CATEGORY } from '@common/modules/i18n/common/index';
@@ -24,28 +24,31 @@ export const LanguageProviders = [
 ];
 
 @Injectable()
-export class I18NService extends Analytics {
+export class I18NService {
 
     constructor(
-        public analytics: AnalyticsService,
         private translate: TranslateService,
         private win: WindowService,
         private store: Store<IAppState>
     ) {
-        super(analytics);
 
-        this.category = CATEGORY;
+        //this.category = CATEGORY;
 
         translate.setDefaultLang(InitialState.lang);
 
-        const userLang = this.win.navigator.language.split('-')[0];
+        //const userLang = this.win.navigator.language.split('-')[0];
 
         this.store
             .select(s => s.i18n)
             .subscribe((state: I18NState) => {
+                this.translate.setTranslation(
+                    state.lang,
+                    require(`../${state.lang}.ts`)
+                );
+
                 this.translate.use(state.lang);
             });
 
-        this.store.dispatch(new ChangeAction(userLang));
+        this.store.dispatch(new ChangeAction('en'));
     }
 }

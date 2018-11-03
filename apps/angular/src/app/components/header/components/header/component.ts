@@ -9,8 +9,8 @@ import { AgoraLanguageService } from '@common/translate/service';
 @Component({
     moduleId: module.id,
     selector: 'agora-header',
-    templateUrl: './component.html',
-    styleUrls: ['./component.scss']
+    templateUrl: 'component.html',
+    styleUrls: ['component.scss']
 })
 export class HeaderComponent implements OnInit {
     @Output() drawerToggle = new EventEmitter<boolean>();

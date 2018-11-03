@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IWindow } from '../../interfaces/index';
+import { IWindow } from '@common/base/interfaces/IWindow';
 
 @Injectable()
 export class WindowService implements IWindow {

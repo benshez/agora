@@ -1,4 +1,4 @@
-import { ITranslation } from '@shared/modules/i18n';
+import { ITranslation } from '@common/modules/i18n/interfaces/ITranslation';
 
 export interface ILanguage {
     key: string;

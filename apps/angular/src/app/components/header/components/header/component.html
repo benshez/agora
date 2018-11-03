@@ -4,47 +4,7 @@
             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
         <span class="matmenu-fill-space"></span>
-        <button mat-icon-button [matMenuTriggerFor]="matmenu">
-            <mat-icon>public</mat-icon>
-        </button>
-        <mat-menu #matmenu="matMenu">
-            <button mat-menu-item (click)="onLanguageChange('zh-hk')">
-                <mat-icon>flag</mat-icon>
-                <span>
-                    Traditional Chinese
-                </span>
-            </button>
-            <button mat-menu-item (click)="onLanguageChange('zh-cn')">
-                <mat-icon>flag</mat-icon>
-                <span>
-                    Simplified Chinese
-                </span>
-            </button>
-            <button mat-menu-item (click)="onLanguageChange('en')">
-                <mat-icon>flag</mat-icon>
-                <span>
-                    English
-                </span>
-            </button>
-            <button mat-menu-item (click)="onLanguageChange('es')">
-                <mat-icon>flag</mat-icon>
-                <span>
-                    Español
-                </span>
-            </button>
-            <button mat-menu-item (click)="onLanguageChange('pt-br')">
-                <mat-icon>flag</mat-icon>
-                <span>
-                    Português
-                </span>
-            </button>
-            <button mat-menu-item (click)="onLanguageChange('eu')">
-                <mat-icon>flag</mat-icon>
-                <span>
-                    Euskera
-                </span>
-            </button>
-        </mat-menu>
+        <agora-i18n></agora-i18n>
         <mat-progress-bar [color]="'primary'" [mode]="progressBarMode">
         </mat-progress-bar>
     </mat-toolbar-row>

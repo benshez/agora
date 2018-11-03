@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { ERROR_OCCURRED } from '@common/base/store/mutations';
+import { ERROR_OCCURRED } from '@common/base/store/actions';
 import { IError } from '@shared/modules/error/interfaces/IError';
 
 export class ErrorOccurred implements Action {

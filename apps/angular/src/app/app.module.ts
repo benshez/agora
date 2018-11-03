@@ -1,4 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Http, HttpModule } from '@angular/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -14,6 +15,7 @@ Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
 @NgModule({
     declarations: [AppComponent],
     imports: [
+        BrowserModule,
         BrowserAnimationsModule,
         HttpModule,
         SharedModule,

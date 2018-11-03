@@ -1,4 +1,4 @@
-import { ILanguage } from '@shared/modules/i18n';
+import { ILanguage } from '@common/modules/i18n/interfaces/ILanguage';
 
 export interface IRootState {
     language: ILanguage;
