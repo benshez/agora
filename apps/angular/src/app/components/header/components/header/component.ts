@@ -34,10 +34,7 @@ export class HeaderComponent implements OnInit {
     }
 
     onLanguageChange(language: string): void {
-        this.languageService.onCreateTranslations(language)
-        this.languageService.onTranslationObservable().subscribe(() => {
-            this.loadMenus();
-        });
+
     }
 
     private loadMenus(): void {

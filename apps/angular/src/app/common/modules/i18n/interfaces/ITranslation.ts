@@ -17,5 +17,9 @@ export interface ITranslation {
     HomeMenuItemText: string;
     AboutMenuItemText: string;
     LoginMenuItemText: string;
+    FinancePayments: {
+        Title: string;
+        Description: string;
+    }
     Greeting: (name: string) => string;
 }

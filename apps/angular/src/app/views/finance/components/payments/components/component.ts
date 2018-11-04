@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { IAppState } from '@common/modules/app/interfaces/IAppState';
 
 @Component({
     moduleId: module.id,
@@ -8,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangePaymentsComponent implements OnInit {
 
-    constructor() { }
+    constructor(public store: Store<IAppState>) {
+        debugger
+    }
 
     ngOnInit() {
     }

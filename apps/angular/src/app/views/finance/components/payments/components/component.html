@@ -1,9 +1,10 @@
 <mat-card>
     <mat-card-title>
-        <span class="title" [innerText]="'finance-payments.title' | translate"></span>
+        <span class="title" [innerText]="store.source.value.i18n.translation.FinancePayments.Title"></span>
     </mat-card-title>
     <mat-card-content>
-        <span class="description" [innerText]="'finance-payments.description' | translate"></span>
+        {{'FinancePayments.Description' | translate}}
+        <span class="description" [innerText]="'FinancePayments.Description' | translate"></span>
         <mat-form-field class="input-container">
             <input matInput type="text">
         </mat-form-field>

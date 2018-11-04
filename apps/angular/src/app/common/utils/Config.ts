@@ -55,8 +55,4 @@ export class Config {
             }
         ];
     }
-
-    public static DEFAULT_LANGUAGE(): string {
-        return 'en';
-    }
 }

@@ -1,22 +1,20 @@
-import { I18NState, ILanguage } from '@common/modules/i18n/interfaces/index';
+import { ILanguage } from '@common/modules/i18n/interfaces/index';
 import { InitialState } from '@common/modules/i18n/states/index';
 import { Actions, ActionTypes } from '@common/modules/i18n/actions/index';
+import { FILTERED_LANGUAGE, LANGUAGES } from '@common/modules/i18n/languages';
 
 export function reducer(
-    state: I18NState = InitialState,
+    state: ILanguage = InitialState,
     action: Actions
-): I18NState {
+): ILanguage {
     switch (action.type) {
         case ActionTypes.LANG_CHANGED:
             const query = action.payload;
 
-            if (state.lang !== query) {
-                const language: ILanguage = require(`../${query}.ts`);
-
-                return (<any>Object).assign({}, state, {
-                    lang: language[query].key,
-                    translation: language[query].translation
-                });
+            if (state.key !== query) {
+                return (<any>Object).assign({}, state,
+                    FILTERED_LANGUAGE(query)
+                );
             }
             return state;
         default:

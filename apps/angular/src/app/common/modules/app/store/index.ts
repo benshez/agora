@@ -27,6 +27,6 @@ export function logger(reducer: ActionReducer<IAppState>): ActionReducer<IAppSta
 
 export const metaReducers: MetaReducer<IAppState>[] = !true ? [logger, storeFreeze] : [];
 
-export const getI18NState = createFeatureSelector<Observable<fromI18n.I18NState>>('Language');
+export const getLanguageState = createFeatureSelector<Observable<fromI18n.ILanguage>>('Language');
 
-export const getLang = createSelector(getI18NState, fromI18n.getLang);
+export const getLang = createSelector(getLanguageState, fromI18n.getLang);

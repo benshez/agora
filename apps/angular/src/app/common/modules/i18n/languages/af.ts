@@ -22,6 +22,10 @@ export const af: ILanguage = {
         HomeMenuItemText: 'Tuis',
         AboutMenuItemText: 'Oor',
         LoginMenuItemText: 'Log',
+        FinancePayments: {
+            Title: "Verander Betaalings",
+            Description: "Verander Asseblief Betaalings."
+        },
         Greeting: (name: string) => `Hi ${name}`
     }
 };

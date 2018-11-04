@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
     constructor(private languageService: AgoraLanguageService) { }
 
     ngOnInit() {
-        this.languageService.onCreateTranslations();
         this.languageService.onCreateRoute();
     }
 }

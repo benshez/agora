@@ -18,7 +18,7 @@ import { IAppRoute } from '@common/utils/interfaces/IAppRoute';
     templateUrl: './app.component.html'
 })
 export class AppComponent implements AfterViewInit {
-    private defaultLanguage: string = Config.DEFAULT_LANGUAGE();
+
     private menuItems: Array<IAppRoute> = Config.ROUTES();
 
     constructor(
@@ -26,7 +26,7 @@ export class AppComponent implements AfterViewInit {
         private _router: Router,
         private _changeDetectionRef: ChangeDetectorRef
     ) {
-        this.onCreateTranslations();
+
     }
 
     public toggle() {
@@ -38,14 +38,6 @@ export class AppComponent implements AfterViewInit {
         // this._changeDetectionRef.detectChanges();
     }
 
-    onCreateTranslations() {
-        this.translate.setTranslation(
-            this.defaultLanguage,
-            require(`../assets/i18n/${this.defaultLanguage}.json`)
-        );
-        this.translate.setDefaultLang(this.defaultLanguage);
-        this.translate.use(this.defaultLanguage);
-    }
 
     public onNavigationItemTap(args: any) {
         const itemIndex = args.index;

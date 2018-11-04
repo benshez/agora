@@ -22,6 +22,10 @@ export const en: ILanguage = {
         HomeMenuItemText: 'Home',
         AboutMenuItemText: 'About',
         LoginMenuItemText: 'Login',
+        FinancePayments: {
+            Title: "Change Payments",
+            Description: "Please change your paymemts."
+        },
         Greeting: (name: string) => `Hi ${name}`
     }
 };

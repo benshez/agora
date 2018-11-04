@@ -1,12 +1,13 @@
 import { Observable } from 'rxjs/Observable';
-import { I18NState } from '@common/modules/i18n/interfaces/I18NState';
-import { en } from '@common/modules/i18n/index';
 
-export const InitialState: I18NState = {
-    lang: 'en',
-    translation: en.translation
+import { ILanguage } from '@common/modules/i18n/interfaces';
+import { FILTERED_DEFAULT_LANGUAGE, DEFAULT_LANGUAGE } from '@common/modules/i18n/languages';
+
+
+export const InitialState: ILanguage = {
+    ...FILTERED_DEFAULT_LANGUAGE
 };
 
-export function getLang(state$: Observable<I18NState>) {
+export function getLang(state$: Observable<ILanguage>) {
     return state$.lift(state => state);
 }

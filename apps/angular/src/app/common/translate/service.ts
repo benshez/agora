@@ -13,7 +13,6 @@ declare var require: NodeRequire;
 
 @Injectable()
 export class AgoraLanguageService {
-    private defaultLanguage: string = Config.DEFAULT_LANGUAGE();
     private selectedLanguage: string = '';
     private selectedRoutePath: string = '';
     private appKey: string = 'AgoraApp';
@@ -38,18 +37,6 @@ export class AgoraLanguageService {
             .subscribe((event) => { this.onChangeTitle(this.selectedRoutePath) });
     }
 
-    public onCreateTranslations(language?: string): void {
-        this.selectedLanguage = language || this.defaultLanguage;
-
-        this.translate.setTranslation(
-            this.selectedLanguage,
-            require(`../../../assets/i18n/${this.selectedLanguage}.json`)
-        );
-
-        this.translate.setDefaultLang(this.defaultLanguage);
-
-        this.translate.use(this.selectedLanguage);
-    }
 
     public onChangeTitle(key?: string): void {
         key = key || this.appKey;
@@ -59,15 +46,5 @@ export class AgoraLanguageService {
                 this.titleService.setTitle(`${app} - ${res.title}`);
             });
         });
-    }
-
-    public onTranslationObservable(): Observable<any> {
-        let onTranslation: Observable<any> = this.translate.use(this.selectedLanguage);
-
-        onTranslation.subscribe(() => {
-            this.onChangeTitle(this.selectedRoutePath);
-        });
-
-        return onTranslation;
     }
 }
