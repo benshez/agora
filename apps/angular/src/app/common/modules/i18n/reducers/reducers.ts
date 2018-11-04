@@ -12,7 +12,9 @@ export function reducer(
             const query = action.payload;
 
             if (state.key !== query) {
-                return (<any>Object).assign({}, state,
+                return (<any>Object).assign(
+                    {},
+                    state,
                     FILTERED_LANGUAGE(query)
                 );
             }

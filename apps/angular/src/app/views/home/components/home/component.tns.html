@@ -1,8 +1,6 @@
 <GridLayout rows="auto,auto">
-        <Button class="fa" text="Side Menu" (tap)="toggle()"></Button>
+    <Button class="fa" text="Side Menu" (tap)="toggle()"></Button>
     <Label text="Side Menu" (click)="toggle()"></Label>
-    <Label class="h1 title"
-        [text]="'home.title' | translate"></Label>
-    <Label class="p description" textWrap="true" row="1"
-        [text]="'home.description' | translate"></Label>
+    <Label class="h1 title" [text]="'home.title'"></Label>
+    <Label class="p description" textWrap="true" row="1" [text]="'home.description'"></Label>
 </GridLayout>

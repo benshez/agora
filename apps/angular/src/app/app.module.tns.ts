@@ -1,6 +1,4 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 import { NativeScriptCommonModule } from 'nativescript-angular/common';
 import { NativeScriptHttpModule } from 'nativescript-angular/http';
@@ -19,7 +17,6 @@ import { TNS_COMPONENT_MODULES } from './app.common.tns';
         NativeScriptHttpModule,
         NativeScriptHttpClientModule,
         NativeScriptFormsModule,
-        TranslateModule.forRoot(),
         ...TNS_COMPONENT_MODULES
     ],
     providers: [],

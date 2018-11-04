@@ -11,7 +11,7 @@ import { IAppState } from '@common/modules/app/interfaces/IAppState';
 export class ChangePaymentsComponent implements OnInit {
 
     constructor(public store: Store<IAppState>) {
-        debugger
+
     }
 
     ngOnInit() {

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser'
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 
 import { map, filter, scan, mergeMap } from 'rxjs/operators';
 
@@ -20,7 +19,6 @@ export class AgoraLanguageService {
     constructor(
         private router: Router,
         private activatedRoute: ActivatedRoute,
-        private translate: TranslateService,
         private titleService: Title) { }
 
     public onCreateRoute(): void {
@@ -41,10 +39,10 @@ export class AgoraLanguageService {
     public onChangeTitle(key?: string): void {
         key = key || this.appKey;
 
-        this.translate.get(this.appKey).subscribe((app: string) => {
-            this.translate.get(key).subscribe((res: any) => {
-                this.titleService.setTitle(`${app} - ${res.title}`);
-            });
-        });
+        // this.translate.get(this.appKey).subscribe((app: string) => {
+        //     this.translate.get(key).subscribe((res: any) => {
+        //         this.titleService.setTitle(`${app} - ${res.title}`);
+        //     });
+        // });
     }
 }

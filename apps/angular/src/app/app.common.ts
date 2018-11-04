@@ -7,6 +7,7 @@ import { ClaimsModule } from '@views/claims/module';
 import { FinanceModule } from '@views/finance/module';
 import { HeaderModule } from '@components/header/module';
 import { MenuModule } from '@components/menu/module';
+import { AgoraPipeModule } from '@common/modules/app/filters/module';
 
 export const COMPONENT_MODULES: Array<any> = [
     AppRoutingModule,
@@ -16,7 +17,7 @@ export const COMPONENT_MODULES: Array<any> = [
     ClaimsModule,
     FinanceModule,
     HeaderModule.forRoot(),
-    MenuModule,
+    MenuModule
 ];
 
 export * from '@shared/modules/routing/module';

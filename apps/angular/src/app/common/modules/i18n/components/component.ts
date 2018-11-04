@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ILanguage } from '@common/modules/i18n/interfaces/ILanguage';
 import { LANGUAGES } from '@common/modules/i18n/languages';
