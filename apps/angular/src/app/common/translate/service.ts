@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser'
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { map, filter, scan, mergeMap } from 'rxjs/operators';
 
 import { Config } from '@common/utils/Config';
-
-import { Observable } from 'rxjs';
+import { IAppState } from '@common/modules/app/interfaces/IAppState';
 
 declare var require: NodeRequire;
 
@@ -19,7 +20,8 @@ export class AgoraLanguageService {
     constructor(
         private router: Router,
         private activatedRoute: ActivatedRoute,
-        private titleService: Title) { }
+        private titleService: Title,
+        private store: Store<IAppState> ) { }
 
     public onCreateRoute(): void {
         this.router.events.pipe(

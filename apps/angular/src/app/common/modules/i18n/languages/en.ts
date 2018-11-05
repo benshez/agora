@@ -26,6 +26,10 @@ export const en: ILanguage = {
             Title: "Change Payments",
             Description: "Please change your paymemts."
         },
+        FinanceResubmissions: {
+            Title: "Change resubmission date",
+            Description: "Please change your resubmission date."
+        },
         Greeting: (name: string) => `Hi ${name}`
     }
 };

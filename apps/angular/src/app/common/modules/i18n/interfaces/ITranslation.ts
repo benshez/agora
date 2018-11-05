@@ -21,5 +21,9 @@ export interface ITranslation {
         Title: string;
         Description: string;
     }
+    FinanceResubmissions: {
+        Title: string;
+        Description: string;
+    }
     Greeting: (name: string) => string;
 }

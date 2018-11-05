@@ -26,6 +26,10 @@ export const af: ILanguage = {
             Title: "Verander Betaalings",
             Description: "Verander Asseblief Betaalings."
         },
+        FinanceResubmissions: {
+            Title: "Verander Betaalings",
+            Description: "Verander Asseblief Betaalings."
+        },
         Greeting: (name: string) => `Hi ${name}`
     }
 };

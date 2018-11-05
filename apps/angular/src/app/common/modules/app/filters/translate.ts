@@ -1,41 +1,32 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import _ from 'lodash';
+
 import { IAppState } from '@common/modules/app/interfaces/IAppState';
 import { ILanguage } from '@common/modules/i18n/interfaces/ILanguage';
+import { ITranslation } from '@common/modules/i18n/interfaces/ITranslation';
 
 @Pipe({
-    name: 'xlate'
+    name: 'translate',
+    pure: false
 })
 
 export class TranslatePipe implements PipeTransform {
 
+    private translatedText: ITranslation;
+
     constructor(public store: Store<IAppState>) { }
 
-    transform(value: string, args: any[]): Promise<string> {
+    transform(value: string): string {
         if (!value) return;
 
-        return new Promise(resolve => {
-            this.store
-                .select(s => s.i18n) //useful if you need the data once and don't want to manually cancel the subscription again
-                .subscribe(
-                    (state: ILanguage) => {
-                        return resolve(_.get(state.translation, value));
-                    })
-        })
-        // let x = this.store
-        //     .select(s => s.i18n)
-        //     .subscribe((state: ILanguage) => {
-        //         debugger
-        //         return _.get(state.translation, value);
-        //     });
-        // debugger
-        // return x[0]
-        // const x = this.state$.lift(state => state);
+        this.store
+            .select(s => s.i18n)
+            .subscribe((translation: ILanguage) => {
+                this.translatedText = translation.translation;
+            })
 
-        // return this.state$.lift(state => state);
-        //return this._translate.instant(value);
-        //return this.store.source..value.i18n.translation[args];
+        return _.get(this.translatedText, value)
     }
+
 }
