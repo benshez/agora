@@ -9,7 +9,7 @@ export const FinanceRoutes: Routes = [
         component: ChangePaymentsComponent
     },
     {
-        path: 'finance-resubs',
+        path: 'finance-resubmissions',
         component: ReSubmissionsComponent
     }
 ];

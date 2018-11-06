@@ -26,32 +26,32 @@ export class Config {
             {
                 url: '/home',
                 name: 'home',
-                description: 'menu.home'
+                description: 'Menu.HomeMenuItemText'
             },
             {
                 url: '/about',
                 name: 'about',
-                description: 'menu.about'
+                description: 'Menu.AboutMenuItemText'
             },
             {
                 url: '/claims-create',
                 name: 'claims-create',
-                description: 'menu.claims'
+                description: 'Menu.ClaimsMenuItemText'
             },
             {
-                url: '/finance-resubs',
-                name: 'finance-resubs',
-                description: 'menu.resubs'
+                url: '/finance-resubmissions',
+                name: 'Finance.Resubmissions',
+                description: 'Menu.ResubmissionsMenuItemText'
             },
             {
                 url: '/finance-payments',
-                name: 'finance-payments',
-                description: 'menu.finance-payments'
+                name: 'Finance.Payments',
+                description: 'Menu.FinancePaymentsMenuItemText'
             },
             {
                 url: '/login',
                 name: 'login',
-                description: 'menu.login'
+                description: 'Menu.LoginMenuItemText'
             }
         ];
     }

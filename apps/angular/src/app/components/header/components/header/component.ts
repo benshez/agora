@@ -4,8 +4,6 @@ import { Config } from '@common/utils/Config';
 import { IAppRoute } from '@common/utils/interfaces/IAppRoute';
 import { ProgressBarService } from '@shared/services/bar/service';
 
-import { AgoraLanguageService } from '@common/translate/service';
-
 @Component({
     moduleId: module.id,
     selector: 'agora-header',
@@ -19,8 +17,7 @@ export class HeaderComponent implements OnInit {
     progressBarMode: string;
 
     constructor(
-        private progressBarService: ProgressBarService,
-        private languageService: AgoraLanguageService
+        private progressBarService: ProgressBarService
     ) { }
 
     ngOnInit() {

@@ -1,7 +1,8 @@
 import { ILanguage } from '@common/modules/i18n/interfaces/index';
 import { InitialState } from '@common/modules/i18n/states/index';
 import { Actions, ActionTypes } from '@common/modules/i18n/actions/index';
-import { FILTERED_LANGUAGE, LANGUAGES } from '@common/modules/i18n/languages';
+
+import { FILTERED_LANGUAGE } from '@common/modules/i18n/services/services';
 
 export function reducer(
     state: ILanguage = InitialState,

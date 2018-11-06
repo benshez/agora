@@ -5,10 +5,12 @@ import { UserComponent } from '@views/login/components/user/component';
 import { UserDirective } from '@views/login/components/user/directive';
 import { LoginComponent } from '@views/login/components/login/component';
 import { RegisterComponent } from '@views/login/components/register/component';
+import { AgoraPipeModule } from '@common/modules/app/filters/module';
 
 export const COMPONENT_MODULES: any[] = [
     SharedModule,
-    RouterModule.forChild(<any>UserRoutes)
+    RouterModule.forChild(<any>UserRoutes),
+    AgoraPipeModule
 ];
 
 export const COMPONENT_DECLARATIONS: Array<any> = [
