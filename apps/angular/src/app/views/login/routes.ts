@@ -4,7 +4,7 @@ import { UserComponent } from '@views/login/components/user/component';
 
 export const UserRoutes: Routes = [
     {
-        path: 'login',
+        path: 'user-login',
         component: UserComponent
     }
 ];

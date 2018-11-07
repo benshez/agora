@@ -21,38 +21,44 @@ export class Config {
         return Config.PLATFORM_TARGET === Config.PLATFORMS.MOBILE_NATIVE;
     }
 
-    public static ROUTES(): Array<IAppRoute> {
+    public static ROUTES(): Array<any> {
         return [
             {
                 url: '/home',
                 name: 'home',
-                description: 'Menu.HomeMenuItemText'
+                description: 'menu.home.description'
             },
             {
                 url: '/about',
                 name: 'about',
-                description: 'Menu.AboutMenuItemText'
+                description: 'menu.about.description'
             },
-            {
-                url: '/claims-create',
-                name: 'claims-create',
-                description: 'Menu.ClaimsMenuItemText'
-            },
-            {
-                url: '/finance-resubmissions',
-                name: 'Finance.Resubmissions',
-                description: 'Menu.ResubmissionsMenuItemText'
-            },
-            {
-                url: '/finance-payments',
-                name: 'Finance.Payments',
-                description: 'Menu.FinancePaymentsMenuItemText'
-            },
-            {
-                url: '/login',
-                name: 'login',
-                description: 'Menu.LoginMenuItemText'
-            }
+            [
+                {
+                    url: '/claims-create',
+                    name: 'claims.create',
+                    description: 'menu.claims.create.description'
+                }
+            ],
+            [
+                {
+                    url: '/finance-resubmissions',
+                    name: 'finance.resubmissions',
+                    description: 'menu.finance.resubmissions.description'
+                },
+                {
+                    url: '/finance-payments',
+                    name: 'finance.payments',
+                    description: 'menu.finance.payments.description'
+                }
+            ],
+            [
+                {
+                    url: '/user-login',
+                    name: 'user.login',
+                    description: 'menu.user.login.description'
+                }
+            ]
         ];
     }
 }

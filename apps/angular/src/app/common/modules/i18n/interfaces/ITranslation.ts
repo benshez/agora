@@ -1,14 +1,31 @@
 export interface ITranslation {
     AppName: string;
     AppNameUpperCase: string;
-    Menu: {
-        LanguageMenuText: string;
-        LoginMenuItemText: string;
-        HomeMenuItemText: string;
-        AboutMenuItemText: string;
-        ClaimsMenuItemText: string;
-        ResubmissionsMenuItemText: string;
-        FinancePaymentsMenuItemText: string;
+    menu: {
+        user: {
+            login: {
+                description: string;
+            };
+        },
+        home: {
+            description: string;
+        };
+        about: {
+            description: string;
+        };
+        claims: {
+            create: {
+                description: string;
+            };
+        },
+        finance: {
+            resubmissions: {
+                description: string;
+            };
+            payments: {
+                description: string;
+            };
+        }
     },
     User: {
         Login: {

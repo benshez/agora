@@ -12,7 +12,7 @@ export class TranslatePipe implements PipeTransform {
     constructor(public service: I18NService) { }
 
     transform(value: string): string {
-        if (!value) return `${value} not found in current translation file.`;
+        if (!value) { return `${value} not found in current translation file.` };
 
         return this.service.transform(value);
     }

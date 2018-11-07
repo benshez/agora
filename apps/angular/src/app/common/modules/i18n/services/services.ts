@@ -30,7 +30,7 @@ export function TITLE_CASE(input: string): string {
     if (!input) {
         return '';
     } else {
-        return input.replace(/\w\S*/g, (txt => txt[0].toUpperCase() + txt.substr(1).toLowerCase()));
+        return _.replace(input, /\w\S*/g, (txt => _.replace(_.startCase(_.toLower(_.replace(txt, '-', ' '))), ' ', '.')));
     }
 }
 
@@ -79,7 +79,6 @@ export class I18NService {
             map(() => this.activatedRoute),
             map((route) => {
                 while (route.firstChild) route = route.firstChild;
-                debugger
                 this.selectedRoutePath = route.routeConfig.path;
                 return route;
             }),
@@ -90,17 +89,12 @@ export class I18NService {
 
     public onChangeTitle(key?: string): void {
         key = key || this.appNameKey;
-        //'Menu' + TITLE_CASE(key) + 'MenuItemText'
+        key = _.replace(key, /\//g, '');
+        key = _.replace(key, /-/g, '.')
 
-
-        const translated: string = this.transform(`Menu.${TITLE_CASE(key)}MenuItemText`);
+        //const translated: string = this.transform(`menu.${TITLE_CASE(key)}.description`);
+        const translated: string = this.transform(`menu.${(key)}.description`);
         const app: string = this.transform(`${this.appNameKey}`)
         this.titleService.setTitle(`${app} - ${translated}`);
-        debugger
-        // this.translate.get(this.appKey).subscribe((app: string) => {
-        //     this.translate.get(key).subscribe((res: any) => {
-        //         this.titleService.setTitle(`${app} - ${res.title}`);
-        //     });
-        // });
     }
 }
