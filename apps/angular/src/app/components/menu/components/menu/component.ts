@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
+import _ from 'lodash';
+
 import { IAppRoute } from '@common/utils/interfaces/IAppRoute';
 
 @Component({
@@ -11,7 +13,7 @@ import { IAppRoute } from '@common/utils/interfaces/IAppRoute';
 })
 export class MenuComponent {
     @Input()
-    items: Array<IAppRoute>;
+    public items: Array<IAppRoute>;
 
     constructor(private router: Router) {
         this.onRouteChange();
@@ -24,5 +26,19 @@ export class MenuComponent {
                 }
             }
         });
+    }
+
+    menuItems(items: any, childrenOnly: boolean): any {
+        const _menuItems: Array<any> = [];
+
+        _.map(items, function (o) {
+            if (childrenOnly && o.children.length !== 0) {
+                _menuItems.push(o);
+            } else if (!childrenOnly && o.children.length === 0) {
+                _menuItems.push(o);
+            }
+        });
+
+        return _menuItems;
     }
 }

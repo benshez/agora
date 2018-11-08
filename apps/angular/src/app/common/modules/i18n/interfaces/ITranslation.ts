@@ -3,6 +3,7 @@ export interface ITranslation {
     AppNameUpperCase: string;
     menu: {
         user: {
+            description: string;
             login: {
                 description: string;
             };
@@ -14,11 +15,13 @@ export interface ITranslation {
             description: string;
         };
         claims: {
+            description: string;
             create: {
                 description: string;
             };
         },
         finance: {
+            description: string;
             resubmissions: {
                 description: string;
             };

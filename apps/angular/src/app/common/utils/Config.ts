@@ -26,39 +26,59 @@ export class Config {
             {
                 url: '/home',
                 name: 'home',
-                description: 'menu.home.description'
+                description: 'menu.home.description',
+                children: []
             },
             {
                 url: '/about',
                 name: 'about',
-                description: 'menu.about.description'
+                description: 'menu.about.description',
+                children: []
             },
-            [
-                {
-                    url: '/claims-create',
-                    name: 'claims.create',
-                    description: 'menu.claims.create.description'
-                }
-            ],
-            [
-                {
-                    url: '/finance-resubmissions',
-                    name: 'finance.resubmissions',
-                    description: 'menu.finance.resubmissions.description'
-                },
-                {
-                    url: '/finance-payments',
-                    name: 'finance.payments',
-                    description: 'menu.finance.payments.description'
-                }
-            ],
-            [
-                {
-                    url: '/user-login',
-                    name: 'user.login',
-                    description: 'menu.user.login.description'
-                }
-            ]
+            {
+                url: '',
+                name: 'claims',
+                description: 'menu.claims.description',
+                children:
+                    [
+                        {
+                            url: '/claims-create',
+                            name: 'claims.create',
+                            description: 'menu.claims.create.description'
+                        }
+                    ]
+            },
+            {
+                url: '',
+                name: 'finance',
+                description: 'menu.finance.description',
+                children:
+                    [
+                        {
+                            url: '/finance-resubmissions',
+                            name: 'finance.resubmissions',
+                            description: 'menu.finance.resubmissions.description'
+                        },
+                        {
+                            url: '/finance-payments',
+                            name: 'finance.payments',
+                            description: 'menu.finance.payments.description'
+                        }
+                    ]
+            },
+            {
+                url: '',
+                name: 'user',
+                description: 'menu.user.description',
+                children:
+                    [
+                        {
+                            url: '/user-login',
+                            name: 'user.login',
+                            description: 'menu.user.login.description'
+                        }
+                    ]
+            }
         ];
     }
 }

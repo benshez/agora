@@ -1,1 +1,12 @@
-<agora-menu-item *ngFor="let item of items" [item]="item"></agora-menu-item>
+<agora-menu-item *ngFor="let item of menuItems(items, false)" [item]="item"></agora-menu-item>
+
+<mat-accordion multi="true" displayMode="flat" *ngFor="let item of menuItems(items, true)">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{item.description | translate}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <agora-menu-item *ngFor="let subIitems of item.children" [item]="subIitems"></agora-menu-item>
+    </mat-expansion-panel>
+</mat-accordion>
