@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser'
+import { Location } from '@angular/common';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { map, filter, scan, mergeMap } from 'rxjs/operators';
@@ -48,12 +49,14 @@ export class I18NService {
         private router: Router,
         private activatedRoute: ActivatedRoute,
         private titleService: Title,
-        private store: Store<IAppState>
+        private store: Store<IAppState>,
+        private location: Location
     ) {
         this.store
             .select(s => s.i18n)
             .subscribe((state: ILanguage) => {
                 FILTERED_LANGUAGE(state.key);
+                this.onChangeTitle(this.location.path());
             });
 
         this.store.dispatch(new ChangeAction(DEFAULT_LANGUAGE));
