@@ -1,4 +1,26 @@
+
 :host {
     display: block;
     min-width: 300px;
+
+
+}
+
+.mat-expansion-panel {
+    .mat-expansion-panel-header {
+        padding: 0 1rem;
+    }
+
+    .mat-expansion-panel-content {
+        padding: 0 1rem;
+        height: 3rem;
+        box-shadow: none;
+        
+        .mat-expansion-panel-body {
+            padding: 0;
+            a {
+                padding: 0;
+            }
+        }
+    }
 }

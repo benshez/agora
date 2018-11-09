@@ -8,8 +8,8 @@ import { IAppRoute } from '@common/utils/interfaces/IAppRoute';
 @Component({
     moduleId: module.id,
     selector: 'agora-menu',
-    templateUrl: './component.html',
-    styleUrls: ['./component.scss']
+    templateUrl: 'component.html',
+    styleUrls: ['component.scss']
 })
 export class MenuComponent {
     @Input()

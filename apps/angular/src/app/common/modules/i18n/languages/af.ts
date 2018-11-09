@@ -8,7 +8,7 @@ export const af: ILanguage = {
         AppNameUpperCase: 'AGORA',
         menu: {
             user: {
-                description: 'User',
+                description: '(A)User',
                 login: {
                     description: '(A)Login'
                 }
@@ -20,13 +20,13 @@ export const af: ILanguage = {
                 description: '(A)About'
             },
             claims: {
-                description: 'Claims',
+                description: '(A)Claims',
                 create: {
                     description: '(A)Submit a new claim'
                 },
             },
             finance: {
-                description: 'Finance',
+                description: '(A)Finance',
                 resubmissions: {
                     description: '(A)Resubmission'
                 },
