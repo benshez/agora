@@ -13,7 +13,7 @@ import { ChangeAction } from '@common/modules/i18n/actions/index';
 
 import { en, af } from '@common/modules/i18n/languages';
 
-export const DEFAULT_LANGUAGE: string = 'en';
+export const DEFAULT_LANGUAGE = 'en';
 
 export const LANGUAGES: Array<ILanguage> = [
     en,
@@ -40,8 +40,8 @@ export const FILTERED_DEFAULT_LANGUAGE: ILanguage = FILTERED_LANGUAGE(DEFAULT_LA
 export class I18NService {
 
     private transformedText: ITranslation;
-    private selectedRoutePath: string = '';
-    private appNameKey: string = 'AppName';
+    private selectedRoutePath = '';
+    private appNameKey = 'AppName';
 
     constructor(
         private win: WindowService,
@@ -78,7 +78,7 @@ export class I18NService {
             filter((event) => event instanceof NavigationEnd),
             map(() => this.activatedRoute),
             map((route) => {
-                while (route.firstChild) route = route.firstChild;
+                while (route.firstChild) { route = route.firstChild };
                 this.selectedRoutePath = route.routeConfig.path;
                 return route;
             }),
@@ -89,10 +89,10 @@ export class I18NService {
 
     public onChangeTitle(key?: string): void {
         key = key || this.appNameKey;
-        key = _.replace(key, /\//g, '');
-        key = _.replace(key, /-/g, '.')
+        key = _.replace(_.replace(key, /\//g, ''), /-/g, '.');
+        // key = _.replace(key, /-/g, '.')
 
-        //const translated: string = this.transform(`menu.${TITLE_CASE(key)}.description`);
+        // const translated: string = this.transform(`menu.${TITLE_CASE(key)}.description`);
         const translated: string = this.transform(`menu.${(key)}.description`);
         const app: string = this.transform(`${this.appNameKey}`)
         this.titleService.setTitle(`${app} - ${translated}`);

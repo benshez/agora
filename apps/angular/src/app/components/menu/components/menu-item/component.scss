@@ -3,11 +3,15 @@
 :host {
     display: block;
 
+
     a {
         display: block;
         text-decoration: none;
-        padding: 0.5rem 1rem;
+        padding: 1rem 1rem;
         outline: none;
         color: $primary--color;
+        background: white;
+        border-bottom: solid 0.03rem rgba(0,0,0,.12);
     }
 }
+
