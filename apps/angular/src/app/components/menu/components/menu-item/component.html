@@ -1,2 +1,2 @@
-<a side-nav-item [routerLink]="item.url" [routerLinkActive]="'active'" *ngIf="![].constructor.isArray(item)"
+<a (click)="toggleMenu()" side-nav-item [routerLink]="item.url" [routerLinkActive]="'active'" *ngIf="![].constructor.isArray(item)"
     [innerText]="item.description | translate"></a>

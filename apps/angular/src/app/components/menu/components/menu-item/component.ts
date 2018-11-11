@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { IAppRoute } from '@common/utils/interfaces/IAppRoute';
+import { MenuService } from '@components/menu/components/services/services';
 
 @Component({
     moduleId: module.id,
@@ -11,4 +12,13 @@ import { IAppRoute } from '@common/utils/interfaces/IAppRoute';
 export class MenuItemComponent {
     @Input()
     item: IAppRoute;
+
+
+    constructor(
+        private menuService: MenuService
+    ) { }
+
+    toggleMenu() {
+        this.menuService.toggle();
+    }
 }

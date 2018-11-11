@@ -4,6 +4,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import _ from 'lodash';
 
 import { IAppRoute } from '@common/utils/interfaces/IAppRoute';
+import { MenuService } from '@components/menu/components/services/services';
 
 @Component({
     moduleId: module.id,
@@ -15,7 +16,10 @@ export class MenuComponent {
     @Input()
     public items: Array<IAppRoute>;
 
-    constructor(private router: Router) {
+    constructor(
+        private router: Router,
+        private menuService: MenuService
+    ) {
         this.onRouteChange();
     }
 
@@ -40,5 +44,9 @@ export class MenuComponent {
         });
 
         return _menuItems;
+    }
+
+    toggleMenu() {
+        this.menuService.toggle();
     }
 }

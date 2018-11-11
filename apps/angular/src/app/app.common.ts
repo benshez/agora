@@ -7,6 +7,7 @@ import { ClaimsModule } from '@views/claims/module';
 import { FinanceModule } from '@views/finance/module';
 import { HeaderModule } from '@components/header/module';
 import { MenuModule } from '@components/menu/module';
+import { MenuService } from '@components/menu/components/services/services';
 
 export const COMPONENT_MODULES: Array<any> = [
     AppRoutingModule,
@@ -18,5 +19,7 @@ export const COMPONENT_MODULES: Array<any> = [
     HeaderModule.forRoot(),
     MenuModule
 ];
+
+export const COMPONENT_PROVIDERS: Array<any> = [MenuService];
 
 export * from '@shared/modules/routing/module';
