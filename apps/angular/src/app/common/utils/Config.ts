@@ -13,11 +13,11 @@ export class Config {
 
     public static PLATFORM_TARGET: string = Config.PLATFORMS.WEB;
 
-    public static get IS_WEB(): boolean {
+    public static IS_WEB(): boolean {
         return Config.PLATFORM_TARGET === Config.PLATFORMS.WEB;
     }
 
-    public static get IS_MOBILE_NATIVE(): boolean {
+    public static IS_MOBILE_NATIVE(): boolean {
         return Config.PLATFORM_TARGET === Config.PLATFORMS.MOBILE_NATIVE;
     }
 

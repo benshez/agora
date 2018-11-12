@@ -1,1 +1,7 @@
-<mat-option *ngIf="item" [nsRouterLink]="item.url" [nsRouterLinkActive]="'active'" [text]="item.description | translate"></mat-option>
+<ListView row="1" [items]="menuItems" class="root-drawer-content">
+    <ng-template let-item="item">
+        <StackLayout class="root-item-stack-layout">
+            <Label [text]="item.description" textWrap="true" class="btn btn-primary btn-active"></Label>
+        </StackLayout>
+    </ng-template>
+</ListView>

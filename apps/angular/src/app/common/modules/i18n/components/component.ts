@@ -4,7 +4,7 @@ import { LANGUAGES } from '@common/modules/i18n/services/services';
 import * as fromI18n from '@common/modules/i18n/utilities/common';
 
 @Component({
-    moduleId: module.id.toString(),
+    moduleId: module.id,
     selector: 'agora-i18n',
     templateUrl: 'component.html'
 })

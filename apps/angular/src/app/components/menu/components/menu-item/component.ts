@@ -21,4 +21,8 @@ export class MenuItemComponent {
     toggleMenu() {
         this.menuService.toggle();
     }
+
+    public onCloseDrawerTap() {
+        console.log('llllll');
+    }
 }

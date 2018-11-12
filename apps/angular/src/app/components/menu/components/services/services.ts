@@ -4,21 +4,21 @@ import { MatSidenav } from '@angular/material';
 @Injectable()
 export class MenuService {
 
-    private sideMenuComponent: MatSidenav;
+    private drawerComponent: MatSidenav;
 
     public setSidenav(sideMenu: MatSidenav) {
-        this.sideMenuComponent = sideMenu;
+        this.drawerComponent = sideMenu;
     }
 
     public open() {
-        return this.sideMenuComponent.open();
+        return this.drawerComponent.open();
     }
 
     public close() {
-        return this.sideMenuComponent.close();
+        return this.drawerComponent.close();
     }
 
     public toggle(): void {
-        this.sideMenuComponent.toggle();
+        this.drawerComponent.toggle();
     }
 }

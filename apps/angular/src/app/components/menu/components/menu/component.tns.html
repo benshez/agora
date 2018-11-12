@@ -1,3 +1,10 @@
-<StackLayout orientation="horizontal">
-    <agora-menu-item *ngFor="let item of items" [item]="item"></agora-menu-item>
+<StackLayout class="sideTitleStackLayout">
+    <Label text="Navigation Menu"></Label>
 </StackLayout>
+<ScrollView>
+    <StackLayout orientation="sideStackLayout">
+        <agora-menu-item *ngFor="let item of items" [item]="item"></agora-menu-item>
+        <Button text="Close Drawer" (tap)="onCloseDrawerTap()"></Button>
+    </StackLayout>
+</ScrollView>
+sdasda

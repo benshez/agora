@@ -3,7 +3,7 @@
         <ListView row="1" [items]="menuItems" (itemTap)="onNavigationItemTap($event)" class="root-drawer-content">
             <ng-template let-item="item">
                 <StackLayout class="root-item-stack-layout">
-                    <Label [text]="item.description | translate" textWrap="true" class="btn btn-primary btn-active"></Label>
+                    <Label [text]="item.description" textWrap="true" class="btn btn-primary btn-active"></Label>
                     <StackLayout height="1" class="root-drawer-content"></StackLayout>
                 </StackLayout>
             </ng-template>

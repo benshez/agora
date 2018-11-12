@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { ProgressBarService } from './service';
 import { TestsModule } from '../../modules/tests/tests';
-import { TranslateModule } from '@ngx-translate/core';
 import { APP_CONFIG, Config } from '../../../common/utils/Config';
 
 describe('ProgressBarService', () => {
@@ -9,7 +8,7 @@ describe('ProgressBarService', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [TestsModule, TranslateModule.forRoot()],
+            imports: [TestsModule],
             providers: [
                 { provide: APP_CONFIG, useValue: Config },
                 ProgressBarService

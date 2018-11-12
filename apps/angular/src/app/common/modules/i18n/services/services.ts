@@ -7,6 +7,7 @@ import { map, filter, scan, mergeMap } from 'rxjs/operators';
 
 import _ from 'lodash';
 
+import { Config } from '@common/utils/Config';
 import { ILanguage, ITranslation } from '@common/modules/i18n/interfaces/index';
 import { WindowService } from '@common/services/window/service';
 import { IAppState } from '@common/modules/app/interfaces/index';
@@ -56,7 +57,7 @@ export class I18NService {
             .select(s => s.i18n)
             .subscribe((state: ILanguage) => {
                 FILTERED_LANGUAGE(state.key);
-                this.onChangeTitle(this.location.path());
+                if (Config.IS_WEB()) { this.onChangeTitle(this.location.path()) };
             });
 
         this.store.dispatch(new ChangeAction(DEFAULT_LANGUAGE));

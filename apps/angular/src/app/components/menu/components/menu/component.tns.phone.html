@@ -1,4 +1,8 @@
-<StackLayout orientation="horizontal">
-    <agora-menu-item *ngFor="let item of items" [item]="item"></agora-menu-item>
-    <Label [text]="'phone.edition'"></Label>
+<StackLayout class="sideTitleStackLayout">
+    <Label text="Navigation Menu"></Label>
 </StackLayout>
+<ScrollView>
+    <StackLayout orientation="sideStackLayout">
+        <agora-menu-item *ngFor="let item of items" [item]="item"></agora-menu-item>
+    </StackLayout>
+</ScrollView>

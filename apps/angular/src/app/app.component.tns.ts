@@ -5,7 +5,7 @@ import {
     ChangeDetectorRef
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 
 import * as app from 'tns-core-modules/application';
@@ -22,7 +22,6 @@ export class AppComponent implements AfterViewInit {
     private menuItems: Array<IAppRoute> = Config.ROUTES();
 
     constructor(
-        private translate: TranslateService,
         private _router: Router,
         private _changeDetectionRef: ChangeDetectorRef
     ) {
@@ -42,7 +41,9 @@ export class AppComponent implements AfterViewInit {
     public onNavigationItemTap(args: any) {
         const itemIndex = args.index;
         const tappedItem = this.menuItems[itemIndex];
+        console.log(tappedItem)
         const sideDrawer: RadSideDrawer = <RadSideDrawer>app.getRootView();
+
         if (tappedItem) {
             this._router.navigateByUrl(tappedItem.url);
         } else {
@@ -51,7 +52,8 @@ export class AppComponent implements AfterViewInit {
                 'this._currentExample.title',
                 'tappedItem.title'
             ]);
-        }
+        };
+
         sideDrawer.toggleDrawerState();
     }
 }
