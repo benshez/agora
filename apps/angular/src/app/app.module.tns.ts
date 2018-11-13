@@ -9,9 +9,9 @@ import { AppComponent } from './app.component';
 
 import { TNS_COMPONENT_MODULES } from './app.common.tns';
 
-import { Config } from '@common/utils/Config';
+// import { Config } from '@common/utils/Config';
 
-Config.PLATFORM_TARGET = Config.PLATFORMS.MOBILE_NATIVE;
+// Config.PLATFORM_TARGET = Config.PLATFORMS.MOBILE_NATIVE;
 
 @NgModule({
     declarations: [AppComponent],
