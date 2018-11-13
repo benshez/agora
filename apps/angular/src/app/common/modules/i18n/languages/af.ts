@@ -66,18 +66,18 @@ export const af: ILanguage = {
             }
         },
         About: {
-            Title: 'Title',
-            Description: 'Description',
+            Title: '(A)Title',
+            Description: '(A)Description',
         },
         Claims: {
             Create: {
-                Title: 'Title',
-                Description: 'Description',
+                Title: '(A)Title',
+                Description: '(A)Description',
             }
         },
         Home: {
-            Title: 'Title',
-            Description: 'Description',
+            Title: '(A)Title',
+            Description: '(A)Description',
         },
         Greeting: (name: string) => `Hi ${name}`
     }
