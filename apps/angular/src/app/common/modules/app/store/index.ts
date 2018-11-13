@@ -29,4 +29,4 @@ export const metaReducers: MetaReducer<IAppState>[] = !true ? [logger, storeFree
 
 export const getLanguageState = createFeatureSelector<Observable<fromI18n.ILanguage>>('Language');
 
-export const getLang = createSelector(getLanguageState, fromI18n.getLang);
+export const getLanguages = createSelector(getLanguageState, fromI18n.getLanguages);
