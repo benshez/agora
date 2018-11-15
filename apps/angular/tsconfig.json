@@ -17,6 +17,9 @@
             "@assets/*": [
                 "assets/*"
             ],
+            "@environments/*": [
+                "environments/*"
+            ],
             "@agora": [
                 "app/*"
             ],

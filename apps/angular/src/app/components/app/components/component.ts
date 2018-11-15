@@ -10,7 +10,7 @@ import { MenuService } from '@components/menu/components/services/services';
 @Component({
     moduleId: module.id,
     selector: 'agora-app',
-    templateUrl: 'app.component.html'
+    templateUrl: 'component.html'
 })
 export class AppComponent implements OnInit {
     private menuItems: Array<IAppRoute> = Config.ROUTES();

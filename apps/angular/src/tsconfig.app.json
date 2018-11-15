@@ -12,6 +12,9 @@
             "@agora": [
                 "./*"
             ],
+            "@environments/*": [
+                "../environments/*"
+            ],
             "@views/*": [
                 "views/*"
             ],

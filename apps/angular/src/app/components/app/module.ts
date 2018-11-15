@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { COMPONENT_MODULES, COMPONENT_PROVIDERS } from './app.common';
+import { AppComponent } from '@components/app/components/component';
+import { COMPONENT_MODULES, COMPONENT_PROVIDERS } from '@components/app/common';
 import { Config } from '@common/utils/Config';
 import { SharedModule } from '@shared/module';
 

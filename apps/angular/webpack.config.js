@@ -86,7 +86,8 @@ module.exports = env => {
             alias: {
                 '~': appFullPath,
                 '@agora': resolve(appFullPath, 'app'),
-                '@assets': resolve(appFullPath, 'app'),
+                '@assets': resolve(appFullPath, 'assets'),
+                '@environments': resolve(appFullPath, 'environments'),
                 '@components': resolve(appFullPath, 'app\\components'),
                 '@views': resolve(appFullPath, 'app\\views'),
                 '@common': resolve(appFullPath, 'app\\common'),

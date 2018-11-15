@@ -5,9 +5,9 @@ import { NativeScriptHttpModule } from 'nativescript-angular/http';
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from '@components/app/components/component';
 
-import { TNS_COMPONENT_MODULES } from './app.common.tns';
+import { TNS_COMPONENT_MODULES } from '@components/app/common.tns';
 
 import { Config } from '@common/utils/Config';
 

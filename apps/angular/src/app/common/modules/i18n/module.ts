@@ -32,7 +32,7 @@ export class I18nModule {
     ) {
         if (parentModule) {
             throw new Error(
-                'MultilingualModule already loaded; Import in root module only.'
+                'I18nModule already loaded; Import in root module only.'
             );
         }
     }

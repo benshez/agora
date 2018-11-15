@@ -7,6 +7,6 @@ export const InitialState: ILanguage = {
     ...FILTERED_DEFAULT_LANGUAGE
 };
 
-export function getLanguages(state$: Observable<ILanguage>) {
+export function getLanguagesFromState(state$: Observable<ILanguage>) {
     return state$.lift(state => state);
 }

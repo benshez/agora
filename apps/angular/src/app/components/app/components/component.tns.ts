@@ -15,7 +15,7 @@ import { IAppRoute } from '@common/utils/interfaces/IAppRoute';
 @Component({
     moduleId: module.id,
     selector: 'agora-app',
-    templateUrl: './app.component.html'
+    templateUrl: 'component.html'
 })
 export class AppComponent implements AfterViewInit {
 
