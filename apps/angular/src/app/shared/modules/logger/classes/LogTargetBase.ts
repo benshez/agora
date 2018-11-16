@@ -3,8 +3,8 @@ import { LogTarget } from '@shared/modules/logger/classes/LogTarget';
 import { LogTargetOptions } from '@shared/modules/logger/classes/LogTargetOptions';
 
 export abstract class LogTargetBase implements LogTarget {
-    constructor(protected options: LogTargetOptions) {
-    }
+
+    constructor(protected options: LogTargetOptions) { }
 
     log(event: ILogEvent): Promise<any> {
         if (event.level >= this.options.minLogLevel) {

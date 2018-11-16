@@ -21,6 +21,22 @@ export class Config {
         return Config.PLATFORM_TARGET === Config.PLATFORMS.MOBILE_NATIVE;
     }
 
+    public static DEBUG = {
+        LEVEL_1: false,
+        LEVEL_2: false,
+        LEVEL_3: false,
+        LEVEL_4: false // .log + all the above
+    }
+
+    public static IS_DEBUG_MODE(): boolean {
+        for (const key in this.DEBUG) {
+            if (this.DEBUG[key]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static ROUTES(): Array<any> {
         return [
             {

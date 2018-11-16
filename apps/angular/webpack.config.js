@@ -272,7 +272,7 @@ module.exports = env => {
         }));
     }
 
-    console.log(config);
+    // console.log(config);
 
     return config;
 };
