@@ -1,4 +1,4 @@
-import { SharedModule } from '@shared/module';
+import { AgoraCommonModule } from '@common/module';
 import { RouterModule } from '@shared/modules/router';
 import { AboutRoutes } from '@views/about/routes';
 import { AboutComponent } from '@views/about/components/about/component';
@@ -6,7 +6,7 @@ import { AboutRouteGuardService } from '@views/about/services/route.guard';
 import { AgoraPipeModule } from '@common/modules/app/filters/module';
 
 export const COMPONENT_MODULES: Array<any> = [
-    SharedModule,
+    AgoraCommonModule.forRoot([]),
     RouterModule.forChild(<any>AboutRoutes),
     AgoraPipeModule
 ];

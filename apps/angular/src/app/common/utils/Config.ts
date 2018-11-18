@@ -1,7 +1,7 @@
 import { InjectionToken } from '@angular/core';
+import _ from 'lodash';
 
 import { IPlatforms } from '@common/utils/interfaces/IPlatforms';
-import { IAppRoute } from '@common/utils/interfaces/IAppRoute';
 
 export let APP_CONFIG = new InjectionToken('Config');
 
@@ -29,12 +29,17 @@ export class Config {
     }
 
     public static IS_DEBUG_MODE(): boolean {
-        for (const key in this.DEBUG) {
-            if (this.DEBUG[key]) {
-                return true;
-            }
-        }
-        return false;
+        return _.some(this.DEBUG, function (level: boolean) {
+            return level === true;
+        });
+    }
+
+    public static DATE_FMT(): string {
+        return 'dd/MMM/yyyy';
+    }
+
+    public static DATE_TIME_FMT(): string {
+        return `${Config.DATE_FMT()} hh:mm:ss`;
     }
 
     public static ROUTES(): Array<any> {

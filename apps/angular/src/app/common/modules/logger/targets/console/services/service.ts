@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IConsole } from '@shared/modules/logger/targets/console/interfaces/IConsole';
+import { IConsole } from '@common/modules/logger/targets/console/interfaces/IConsole';
 
 @Injectable()
 export class ConsoleService implements IConsole {

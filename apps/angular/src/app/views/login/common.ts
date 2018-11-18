@@ -1,4 +1,4 @@
-import { SharedModule } from '@shared/module';
+import { COMMON_MODULE_FOR_ROOT } from '@common/module';
 import { RouterModule } from '@shared/modules/router';
 import { UserRoutes } from '@views/login/routes';
 import { UserComponent } from '@views/login/components/user/component';
@@ -8,7 +8,7 @@ import { RegisterComponent } from '@views/login/components/register/component';
 import { AgoraPipeModule } from '@common/modules/app/filters/module';
 
 export const COMPONENT_MODULES: any[] = [
-    SharedModule,
+    ...COMMON_MODULE_FOR_ROOT,
     RouterModule.forChild(<any>UserRoutes),
     AgoraPipeModule
 ];

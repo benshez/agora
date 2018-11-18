@@ -6,7 +6,12 @@ import { MaterialModule } from '@shared/modules/material/module';
 
 export const COMMON_MODULE_DECLARATIONS: Array<any> = [];
 
-export const COMMON_MODULE_IMPORTS: Array<any> = [FormsModule, CommonModule, I18nModule];
+export const COMMON_MODULE_IMPORTS: Array<any> = [
+    FormsModule,
+    CommonModule,
+    MaterialModule,
+    I18nModule
+];
 
 export const COMMON_MODULE_EXPORTS: Array<any> = [
     CommonModule,
@@ -15,4 +20,10 @@ export const COMMON_MODULE_EXPORTS: Array<any> = [
     MaterialModule
 ];
 
-export const COMMON_SERVICES: Array<any> = [];
+export const COMMON_SERVICES: Array<any> = [
+    //LogService
+];
+
+export const COMMON_MODULE_ROOT: Array<any> = [
+
+]

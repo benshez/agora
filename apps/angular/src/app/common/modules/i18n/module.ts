@@ -7,7 +7,12 @@ import {
     CUSTOM_ELEMENTS_SCHEMA
 } from '@angular/core';
 
-import { I18N_COMPONENT_EXPORTS, I18N_COMPONENT_DECLARATIONS, I18N_PROVIDERS, I18N_COMPONENT_IMPORTS } from '@common/modules/i18n/common'
+import {
+    I18N_COMPONENT_EXPORTS,
+    I18N_COMPONENT_DECLARATIONS,
+    I18N_PROVIDERS,
+    I18N_COMPONENT_IMPORTS
+} from '@common/modules/i18n/common'
 
 @NgModule({
     imports: [...I18N_COMPONENT_IMPORTS],

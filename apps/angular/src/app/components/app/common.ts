@@ -9,6 +9,9 @@ import { HeaderModule } from '@components/header/module';
 import { MenuModule } from '@components/menu/module';
 import { MenuService } from '@components/menu/components/services/services';
 
+import { COMMON_MODULE_FOR_ROOT } from '@common/module';
+import { LOGGER_MODULE_FOR_ROOT } from '@common/modules/logger/module';
+
 export const COMPONENT_MODULES: Array<any> = [
     AppRoutingModule,
     HomeModule,
@@ -17,9 +20,11 @@ export const COMPONENT_MODULES: Array<any> = [
     ClaimsModule,
     FinanceModule,
     HeaderModule.forRoot(),
-    MenuModule
+    MenuModule,
+    ...COMMON_MODULE_FOR_ROOT,
+    ...LOGGER_MODULE_FOR_ROOT
 ];
 
-export const COMPONENT_PROVIDERS: Array<any> = [MenuService];
-
-export * from '@shared/modules/routing/module';
+export const COMPONENT_PROVIDERS: Array<any> = [
+    MenuService
+];

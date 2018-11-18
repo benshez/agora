@@ -1,11 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '@common/modules/app/filters/translate';
+import {
+    TranslatePipe,
+    DateFormatPipe,
+    DateTimeFormatPipe
+} from '@common/index';
 
 @NgModule({
     imports: [CommonModule],
-    declarations: [TranslatePipe],
-    exports: [TranslatePipe],
+    declarations: [
+        TranslatePipe,
+        DateFormatPipe,
+        DateTimeFormatPipe
+    ],
+    exports: [
+        TranslatePipe,
+        DateFormatPipe,
+        DateTimeFormatPipe
+    ],
 })
 
 export class AgoraPipeModule {

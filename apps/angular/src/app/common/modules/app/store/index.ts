@@ -8,8 +8,6 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import * as fromI18n from '@common/modules/i18n/utilities/common';
 import { IAppState } from '@common/modules/app/interfaces';
 import { environment } from '@environments/environment';
-// import { LogService } from '@shared/modules/logger/services/service';
-// import { LogTarget } from '@shared/modules/logger/classes';
 
 export const reducers: ActionReducerMap<IAppState> = {
     i18n: fromI18n.reducer
@@ -17,12 +15,6 @@ export const reducers: ActionReducerMap<IAppState> = {
 
 export function logger(reducer: ActionReducer<IAppState>): ActionReducer<IAppState> {
     return function (state: IAppState, action: any): IAppState {
-        // const log: LogService = new LogService(LogTarget);
-
-        // log.debug(`state: ${state}`);
-        console.log('state', state);
-        console.log('action', action);
-
         return reducer(state, action);
     };
 }

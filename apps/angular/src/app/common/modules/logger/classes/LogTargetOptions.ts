@@ -1,4 +1,4 @@
-import { ELogLevel } from '@shared/modules/logger/enums/ELogLevel';
+import { ELogLevel } from '@common/modules/logger/enums/ELogLevel';
 
 export abstract class LogTargetOptions {
     minLogLevel: ELogLevel;

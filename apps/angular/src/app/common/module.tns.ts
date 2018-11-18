@@ -2,8 +2,7 @@ import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { reducers, metaReducers } from '@common/modules/app/store';
-import { I18NEffects } from '@common/modules/i18n/utilities/common';
+import { reducers, metaReducers, I18NEffects } from '@common/index';
 
 import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';

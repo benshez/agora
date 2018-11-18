@@ -1,6 +1,6 @@
-import { ILogEvent } from '@shared/modules/logger/interfaces/ILogEvent';
-import { LogTarget } from '@shared/modules/logger/classes/LogTarget';
-import { LogTargetOptions } from '@shared/modules/logger/classes/LogTargetOptions';
+import { ILogEvent } from '@common/modules/logger/interfaces/ILogEvent';
+import { LogTarget } from '@common/modules/logger/classes/LogTarget';
+import { LogTargetOptions } from '@common/modules/logger/classes/LogTargetOptions';
 
 export abstract class LogTargetBase implements LogTarget {
 

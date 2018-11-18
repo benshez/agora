@@ -6,9 +6,11 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from '@components/app/components/component';
 import { COMPONENT_MODULES, COMPONENT_PROVIDERS } from '@components/app/common';
 import { Config } from '@common/utils/Config';
-import { SharedModule } from '@shared/module';
+import { environment } from '@environments/environment';
+import { COMMON_MODULE_FOR_ROOT } from '@common/module';
 
 Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
+Config.DEBUG.LEVEL_4 = !environment.production;
 
 @NgModule({
     declarations: [AppComponent],
@@ -16,7 +18,7 @@ Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
         BrowserModule,
         BrowserAnimationsModule,
         HttpModule,
-        SharedModule,
+        ...COMMON_MODULE_FOR_ROOT,
         ...COMPONENT_MODULES
     ],
     providers: [...COMPONENT_PROVIDERS],

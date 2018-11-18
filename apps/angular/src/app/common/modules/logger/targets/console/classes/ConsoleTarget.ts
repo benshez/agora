@@ -4,10 +4,10 @@ import {
     LogTargetBase,
     LogTargetOptions,
     LogTarget
-} from '@shared/modules/logger/classes';
-import { ILogEvent } from '@shared/modules/logger/interfaces/ILogEvent';
-import { ELogLevel } from '@shared/modules/logger/enums/ELogLevel';
-import { ConsoleService } from '@shared/modules/logger/targets/console/services/service';
+} from '@common/modules/logger/classes';
+import { ILogEvent } from '@common/modules/logger/interfaces/ILogEvent';
+import { ELogLevel } from '@common/modules/logger/enums/ELogLevel';
+import { ConsoleService } from '@common/modules/logger/targets/console/services/service';
 
 @Injectable()
 export class ConsoleTarget extends LogTargetBase {
