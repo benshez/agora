@@ -21,7 +21,7 @@ export const COMMON_MODULE_EXPORTS: Array<any> = [
 ];
 
 export const COMMON_SERVICES: Array<any> = [
-    //LogService
+
 ];
 
 export const COMMON_MODULE_ROOT: Array<any> = [

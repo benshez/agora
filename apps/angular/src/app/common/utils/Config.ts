@@ -34,12 +34,16 @@ export class Config {
         });
     }
 
-    public static DATE_FMT(): string {
-        return 'dd/MMM/yyyy';
+    public static DATE_FMT_DD_MM_YYYY(): string {
+        return 'dd/MM/yyyy';
+    }
+
+    public static TIME_FMT_HH_MM_SS(): string {
+        return 'hh:mm:ss';
     }
 
     public static DATE_TIME_FMT(): string {
-        return `${Config.DATE_FMT()} hh:mm:ss`;
+        return `${Config.DATE_FMT_DD_MM_YYYY()} ${Config.TIME_FMT_HH_MM_SS()}`;
     }
 
     public static ROUTES(): Array<any> {

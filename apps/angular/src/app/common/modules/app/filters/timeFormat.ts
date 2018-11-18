@@ -3,10 +3,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Config } from '@common/utils/Config';
 
 @Pipe({
-    name: 'dateFormat'
+    name: 'timeFormat'
 })
-export class DateFormatPipe extends DatePipe implements PipeTransform {
+export class TimeFormatPipe extends DatePipe implements PipeTransform {
     transform(value: any, args?: any): any {
-        return super.transform(value, Config.DATE_FMT_DD_MM_YYYY());
+        return super.transform(value, Config.TIME_FMT_HH_MM_SS());
     }
 }
