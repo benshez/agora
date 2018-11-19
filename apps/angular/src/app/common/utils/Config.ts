@@ -46,6 +46,10 @@ export class Config {
         return `${Config.DATE_FMT_DD_MM_YYYY()} ${Config.TIME_FMT_HH_MM_SS()}`;
     }
 
+    public static SNACK_BAR_DURATION(): number {
+        return 2000
+    }
+
     public static ROUTES(): Array<any> {
         return [
             {

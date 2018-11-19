@@ -2,8 +2,6 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { LOGGER_MODULE_FOR_ROOT } from '@common/modules/logger/module';
-
 import {
     reducers,
     metaReducers,

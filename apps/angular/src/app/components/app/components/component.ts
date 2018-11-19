@@ -29,9 +29,9 @@ export class AppComponent implements OnInit {
         private snackBar: MatSnackBar
     ) {
         const message = `${en.translation.AppName} Started on ${this.datePipe.transform(Date.now())} at ${this.timePipe.transform(Date.now())}`;
-        this.snackBar.open(message, '', {
-            duration: 1000,
-        });
+        // this.snackBar.open(message, '', {
+        //     duration: 1000,
+        // });
         this.loggerServicer
             .info(message);
     }
