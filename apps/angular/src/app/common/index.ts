@@ -2,7 +2,6 @@ import { LogTarget } from '@common/modules/logger/classes/LogTarget';
 import { LogTargetBase } from '@common/modules/logger/classes/LogTargetBase';
 import { LogTargetOptions } from '@common/modules/logger/classes/LogTargetOptions';
 import { ConsoleService } from '@common/modules/logger/targets/console/services/service';
-import { ConsoleTarget } from '@common/modules/logger/targets/console/classes/ConsoleTarget';
 import { WindowService } from '@common/modules/logger/targets/window/services/service';
 import { ILogEvent } from '@common/modules/logger/interfaces/ILogEvent';
 import { ELogLevel } from '@common/modules/logger/enums/ELogLevel';
@@ -26,7 +25,6 @@ export {
     LogTargetBase,
     LogTargetOptions,
     ConsoleService,
-    ConsoleTarget,
     WindowService,
     ILogEvent,
     ELogLevel,

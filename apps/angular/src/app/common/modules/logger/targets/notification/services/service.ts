@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { AgoraSnackbarComponent } from '@common/modules/logger/targets/notification/components/component';
-import { Config, ISnack } from '@common/index';
+import { Config } from '@common/utils/Config';
+import { ISnack } from '@common/modules/logger/targets/notification/interfaces/ISnack';
 
 @Injectable()
 export class NotificationService {

@@ -1,5 +1,4 @@
 import { Injectable, Provider } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
 
 import {
     LogTargetBase,
@@ -15,18 +14,12 @@ import { NotificationService } from '@common/modules/logger/targets/notification
 export class ConsoleTarget extends LogTargetBase {
     constructor(
         private console: ConsoleService,
-        options: LogTargetOptions,
-        private matSnackBar: NotificationService
+        options: LogTargetOptions
     ) {
         super(options);
-        debugger;
     }
 
     writeToLog(event: ILogEvent) {
-        debugger
-        // this.snackBar.open(event.message.toString(), '', {
-        //     duration: 1000,
-        // });
         switch (event.level) {
             case ELogLevel.Debug:
                 this.console.log(event.message);
@@ -45,14 +38,14 @@ export class ConsoleTarget extends LogTargetBase {
     }
 }
 
-export function createConsoleTarget(logLevel: ELogLevel, consoleService: ConsoleService, snackBar: NotificationService) {
-    return new ConsoleTarget(consoleService, { minLogLevel: logLevel }, snackBar);
+export function createConsoleTarget(logLevel: ELogLevel, consoleService: ConsoleService) {
+    return new ConsoleTarget(consoleService, { minLogLevel: logLevel });
 }
 
-export function provideConsoleTarget(logLevel: ELogLevel, snackBar: MatSnackBar): Provider {
+export function provideConsoleTarget(logLevel: ELogLevel): Provider {
     return {
         provide: LogTarget, deps: [ConsoleService],
         multi: true,
-        useFactory: (c: ConsoleService, s: NotificationService) => new ConsoleTarget(c, { minLogLevel: logLevel }, s)
+        useFactory: (c: ConsoleService) => new ConsoleTarget(c, { minLogLevel: logLevel })
     };
 }

@@ -1,8 +1,7 @@
 {
     "/api": {
-        "target": "https://www.example.com",
-        "cookieDomainRewrite": "example.com",
-        "secure": true,
+        "target": "http://localhost:4200",
+        "secure": false,
         "changeOrigin": true,
         "logLevel": "debug",
         "headers": {

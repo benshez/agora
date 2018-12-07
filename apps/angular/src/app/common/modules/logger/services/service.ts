@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import * as _ from 'lodash';
-// module
+
 import { Config } from '@common/utils/Config';
 import { LogTarget } from '@common/modules/logger/classes';
 import { ELogLevel } from '@common/modules/logger/enums/ELogLevel';

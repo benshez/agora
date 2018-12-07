@@ -2,6 +2,7 @@ const { join, relative, resolve, sep } = require("path");
 
 const webpack = require("webpack");
 const nsWebpack = require("nativescript-dev-webpack");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const nativescriptTarget = require("nativescript-dev-webpack/nativescript-target");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -240,6 +241,23 @@ module.exports = env => {
             }),
             // Does IPC communication with the {N} CLI to notify events when running in watch mode.
             new nsWebpack.WatchStateLoggerPlugin(),
+            new HtmlWebpackPlugin({
+                filename: 'index.html',
+                template: 'src/index.html',
+                favicon: 'favicon.ico?v=1',
+                title: "Agora moble application",
+                files: {
+                    "js": ["assets/js/splunk.js"],
+                    "css": [
+                        "https://fonts.googleapis.com/icon?family=Material+Icons",
+                        "https://fonts.googleapis.com/css?family=Open+Sans"
+                    ],
+                },
+                meta: {
+                    'viewport': 'width=device-width, initial-scale=1',
+                },
+                inject: true
+            }),
         ],
     };
 

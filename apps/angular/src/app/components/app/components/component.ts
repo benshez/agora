@@ -23,17 +23,19 @@ export class AppComponent implements OnInit {
     constructor(
         private languageService: I18NService,
         private menuService: MenuService,
-        private loggerServicer: LogService,
+        private loggerService: LogService,
         private datePipe: DateFormatPipe,
         private timePipe: TimeFormatPipe,
         private snackBar: MatSnackBar
     ) {
-        const message = `${en.translation.AppName} Started on ${this.datePipe.transform(Date.now())} at ${this.timePipe.transform(Date.now())}`;
-        // this.snackBar.open(message, '', {
-        //     duration: 1000,
-        // });
-        this.loggerServicer
-            .info(message);
+        // const message = `${en.translation.AppName} Started on ${this.datePipe.transform(Date.now())} at ${this.timePipe.transform(Date.now())}`;
+        // // this.snackBar.open(message, '', {
+        // //     duration: 1000,
+        // // });
+        // this.loggerServicer
+        //     .info(message);
+this.loggerService.info('dfsdfs')
+        //angulartics2Splunk.eventTrack('Agora Loaded', 'Hello world')
     }
 
     ngOnInit() {
