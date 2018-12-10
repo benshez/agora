@@ -1,11 +1,25 @@
 {
-    "/api": {
+    "/api/*": {
         "target": "http://localhost:4200",
         "secure": false,
         "changeOrigin": true,
         "logLevel": "debug",
         "headers": {
-            "host": "example.com"
+            "host": "agora-dev.com"
+        }
+    },
+    "/splunk/*": {
+        "target": "http://localhost:8088",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/splunk": ""
+        },
+        "headers": {
+            "host": "agora-dev.com",
+            "Content-Type": "application/json",
+            "Authorization": "Splunk 8328e4ff-31b4-4dc7-822d-595b30b7d386"
         }
     }
 }

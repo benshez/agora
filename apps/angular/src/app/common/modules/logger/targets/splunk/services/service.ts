@@ -14,31 +14,31 @@ export class SplunkService implements ISplunk {
     public error(_m: any): void { debugger; return; }
     public warn(_m: any): void { debugger; return; }
     public info(_m: any) {
-    const httpOptions = {
-        headers: new HttpHeaders({
-            'Content-Type':  'application/json',
-            'Authorization': 'Splunk 8328e4ff-31b4-4dc7-822d-595b30b7d386'
-        })
-    };
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                'Authorization': 'Splunk 8328e4ff-31b4-4dc7-822d-595b30b7d386'
+            })
+        };
 
 
         //this.http = new HttpClient();
-        let data: any = {"time":1459241926.498019000,"sourcetype":"my_test","index":"agora_error","event":{"myfield":"good"}};
-debugger
-        return this.http.post('http://localhost:8088/services/collector',data,httpOptions)
+        let data: any = { "time": 1459241926.498019000, "sourcetype": "my_test", "index": "agora_error", "event": { "myfield": "good" } };
+        debugger
+        return this.http.post('/splunk/services/collector', data, httpOptions)
             .subscribe(
-                res =>{
+                res => {
                     console.log(res);
                 },
                 err => {
                     console.log(err.message);
-            }
-        )
+                }
+            )
         //Splunk 8328e4ff-31b4-4dc7-822d-595b30b7d386
         // {"time":1459241926.498019000,"sourcetype":"my_test","index":"agora_error","event":{"myfield":"good"}}
 
-    //let result = source.search(subString);
-    //return result > -1;
+        //let result = source.search(subString);
+        //return result > -1;
     }
     // public info(_m: any) {
     //         debugger
