@@ -50,6 +50,10 @@ export class Config {
         return 2000
     }
 
+    public static SPLUNK_TOKEN(): string {
+        return '8328e4ff-31b4-4dc7-822d-595b30b7d386';
+    }
+
     public static ROUTES(): Array<any> {
         return [
             {
