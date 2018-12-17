@@ -5,6 +5,8 @@
         "ng": "ng",
         "start": "ng serve --proxy-config proxy.conf.json",
         "build": "ng build",
+        "build.test": "ng build --configuration=test",
+        "build.prod": "ng build --prod",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
@@ -70,8 +72,7 @@
         "tns-platform-declarations": "^5.0.2",
         "zone.js": "^0.8.14",
         "i18n-ts": "^1.0.2",
-        "lodash": "^4.17.11",
-        "angulartics2": "^7.2.0"
+        "lodash": "^4.17.11"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "~0.10.5",

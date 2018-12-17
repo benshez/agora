@@ -79,6 +79,7 @@ export const en: ILanguage = {
             Title: 'Title',
             Description: 'Description',
         },
-        Greeting: (name: string) => `Hi ${name}`
+        Greeting: (name: string) => `Hi ${name}`,
+        AppStarted: (app: string) => `${app} started.`
     }
 };

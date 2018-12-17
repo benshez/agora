@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import {
     MatAutocompleteModule,
@@ -103,6 +103,9 @@ import {
         MatTabsModule,
         MatToolbarModule,
         MatTooltipModule
-    ]
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class MaterialModule {}
+export class MaterialModule {
+
+}

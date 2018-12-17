@@ -79,6 +79,7 @@ export const af: ILanguage = {
             Title: '(A)Title',
             Description: '(A)Description',
         },
-        Greeting: (name: string) => `Hi ${name}`
+        Greeting: (name: string) => `Hi ${name}`,
+        AppStarted: (app: string) => `A ${app} started.`
     }
 };

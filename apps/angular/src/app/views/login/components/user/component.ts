@@ -30,8 +30,8 @@ export class UserComponent implements OnInit, OnDestroy {
     @Input()
     model: UserItem;
 
-    private doingLogin = true;
-    private doingRegistration = false;
+    public doingLogin = true;
+    public doingRegistration = false;
 
     constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 

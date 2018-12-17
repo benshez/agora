@@ -75,4 +75,5 @@ export interface ITranslation {
         Description: string;
     }
     Greeting: (name: string) => string;
+    AppStarted: (app: string) => string;
 }

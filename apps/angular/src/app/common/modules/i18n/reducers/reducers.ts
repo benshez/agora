@@ -2,7 +2,7 @@ import { ILanguage } from '@common/modules/i18n/interfaces/index';
 import { InitialState } from '@common/modules/i18n/states/index';
 import { Actions, ActionTypes } from '@common/modules/i18n/actions/index';
 
-import { FILTERED_LANGUAGE } from '@common/modules/i18n/services/services';
+import { RESOLVE_LANGUAGE } from '@common/modules/i18n/services/services';
 
 export function reducer(
     state: ILanguage = InitialState,
@@ -16,7 +16,7 @@ export function reducer(
                 return (<any>Object).assign(
                     {},
                     state,
-                    FILTERED_LANGUAGE(query)
+                    RESOLVE_LANGUAGE(query)
                 );
             }
             return state;

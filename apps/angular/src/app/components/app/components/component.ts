@@ -1,22 +1,21 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
 import { MatSidenav } from '@angular/material';
+import { I18nResolver } from 'i18n-ts';
 
 import { Config } from '@common/utils/Config';
 import { IAppRoute } from '@common/utils/interfaces/IAppRoute';
 import { I18NService } from '@common/modules/i18n/services';
 import { MenuService } from '@components/menu/components/services/services';
 
-import { en, DateFormatPipe, TimeFormatPipe, LogService } from '@common/index';
+import { en, af, LogService } from '@common/index';
 
 @Component({
     moduleId: module.id,
     selector: 'agora-app',
-    templateUrl: 'component.html',
-    providers: [DateFormatPipe, TimeFormatPipe]
+    templateUrl: 'component.html'
 })
 export class AppComponent implements OnInit {
-    private menuItems: Array<IAppRoute> = Config.ROUTES();
+    public menuItems: Array<IAppRoute> = Config.ROUTES();
 
     @ViewChild('drawer') public drawer: MatSidenav;
 
@@ -24,18 +23,16 @@ export class AppComponent implements OnInit {
         private languageService: I18NService,
         private menuService: MenuService,
         private loggerService: LogService,
-        private datePipe: DateFormatPipe,
-        private timePipe: TimeFormatPipe,
-        private snackBar: MatSnackBar
     ) {
-        // const message = `${en.translation.AppName} Started on ${this.datePipe.transform(Date.now())} at ${this.timePipe.transform(Date.now())}`;
-        // // this.snackBar.open(message, '', {
-        // //     duration: 1000,
-        // // });
-        // this.loggerServicer
-        //     .info(message);
-this.loggerService.info('dfsdfs')
-        //angulartics2Splunk.eventTrack('Agora Loaded', 'Hello world')
+        const i18n = {
+            en: en,
+            af: af,
+            default: en
+        };
+        const messages = new I18nResolver(i18n, "af").translation;
+        //messages.translation.AppStarted('dasd')
+
+        this.loggerService.info(messages.translation.AppStarted('dasd'))
     }
 
     ngOnInit() {

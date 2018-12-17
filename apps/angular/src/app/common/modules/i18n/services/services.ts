@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { map, filter, scan, mergeMap } from 'rxjs/operators';
+import { I18nResolver } from 'i18n-ts';
 
 import _ from 'lodash';
 
@@ -17,17 +18,6 @@ import { en, af } from '@common/modules/i18n/languages';
 
 export const DEFAULT_LANGUAGE = 'en';
 
-export const LANGUAGES: Array<ILanguage> = [
-    en,
-    af
-];
-
-export function FILTERED_LANGUAGE(key: string) {
-    return _.find(LANGUAGES, function (o) {
-        return o.key === key;
-    });
-};
-
 export function TITLE_CASE(input: string): string {
     if (!input) {
         return '';
@@ -36,7 +26,22 @@ export function TITLE_CASE(input: string): string {
     }
 }
 
-export const FILTERED_DEFAULT_LANGUAGE: ILanguage = FILTERED_LANGUAGE(DEFAULT_LANGUAGE);
+export const CURRENT_LANGUAGES = {
+    en: en,
+    af: af,
+    default: en
+};
+
+export function RESOLVE_LANGUAGE(languageKey): ILanguage {
+    return new I18nResolver(CURRENT_LANGUAGES, languageKey).translation;
+}
+
+export const FILTERED_DEFAULT_LANGUAGE: ILanguage = CURRENT_LANGUAGES.default;
+
+export const LANGUAGES: Array<ILanguage> = [
+    CURRENT_LANGUAGES.en,
+    CURRENT_LANGUAGES.af
+];
 
 @Injectable()
 export class I18NService {
@@ -56,7 +61,8 @@ export class I18NService {
         this.store
             .select(s => s.i18n)
             .subscribe((state: ILanguage) => {
-                FILTERED_LANGUAGE(state.key);
+                //FILTERED_LANGUAGE(state.key);
+                RESOLVE_LANGUAGE(state.key);
                 if (Config.IS_WEB()) { this.onChangeTitle(this.location.path()) };
             });
 
@@ -66,8 +72,8 @@ export class I18NService {
     transform(value: string): string {
         this.store
             .select(s => s.i18n)
-            .subscribe((translation: ILanguage) => {
-                this.transformedText = translation.translation;
+            .subscribe((state: ILanguage) => {
+                this.transformedText = state.translation;
             });
 
         return this.filterTransform(this.transformedText, value);

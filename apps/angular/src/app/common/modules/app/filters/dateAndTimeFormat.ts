@@ -5,7 +5,7 @@ import { Config } from '@common/utils/Config';
 @Pipe({
     name: 'dateTimeFormat'
 })
-export class DateTimeFormatPipe extends DatePipe implements PipeTransform {
+export class DateAndTimeFormatPipe extends DatePipe implements PipeTransform {
     transform(value: any, args?: any): any {
         return super.transform(value, Config.DATE_TIME_FMT());
     }

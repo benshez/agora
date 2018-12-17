@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2Splunk } from 'angulartics2/splunk';
 
 import { I18nModule } from '@common/modules/i18n/module';
 import { MaterialModule } from '@shared/modules/material/module';
@@ -14,8 +12,7 @@ export const COMMON_MODULE_IMPORTS: Array<any> = [
     CommonModule,
     MaterialModule,
     HttpClientModule,
-    I18nModule,
-    //Angulartics2Module.forRoot()
+    I18nModule
 ];
 
 export const COMMON_MODULE_EXPORTS: Array<any> = [
