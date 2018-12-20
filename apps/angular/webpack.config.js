@@ -250,7 +250,8 @@ module.exports = env => {
                     "js": ["assets/js/splunk.js"],
                     "css": [
                         "https://fonts.googleapis.com/icon?family=Material+Icons",
-                        "https://fonts.googleapis.com/css?family=Open+Sans"
+                        "https://fonts.googleapis.com/css?family=Open+Sans",
+                        "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
                     ],
                 },
                 meta: {

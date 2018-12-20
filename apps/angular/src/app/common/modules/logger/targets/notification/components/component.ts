@@ -1,11 +1,7 @@
-import { Injectable, Component, Inject } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
+import { Component, Inject } from '@angular/core';
 import { MAT_SNACK_BAR_DATA } from '@angular/material';
-@Component({
-    moduleId: module.id,
-    selector: 'agora-i18n',
-    templateUrl: 'component.html'
-})
+
+
 @Component({
     moduleId: module.id,
     selector: 'agora-snackbar',

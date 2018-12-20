@@ -19,7 +19,8 @@ import {
         StoreModule.forRoot(reducers, { metaReducers }),
         EffectsModule.forRoot([]),
         EffectsModule.forFeature([I18NEffects]),
-        ...TNS_COMMON_MODULE_IMPORTS],
+        ...TNS_COMMON_MODULE_IMPORTS
+    ],
     declarations: [...TNS_COMMON_MODULE_DECLARATIONS],
     exports: [
         NativeScriptModule,

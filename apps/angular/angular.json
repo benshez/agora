@@ -23,6 +23,7 @@
                         "styles": [
                             "./src/assets/styles/icons.css",
                             "./src/assets/styles/fonts.css",
+                            "./src/assets/styles/font-awesome.min.css",
                             "./src/assets/styles/styles.scss"
                         ],
                         "scripts": [
