@@ -16,7 +16,7 @@ export class I18NComponent implements OnInit {
         private store: Store<fromI18n.ILanguage>
     ) {
         this.store.subscribe((s: any) => {
-            this.lang = s && s.i18n ? s.i18n.lang : '';
+            this.lang = s && s.i18n ? s.i18n.key : '';
         });
     }
 
