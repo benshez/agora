@@ -1,11 +1,11 @@
 import { ILanguage } from '@common/modules/i18n/interfaces/index';
-import { InitialState } from '@common/modules/i18n/states/index';
+import { InitialI18NState } from '@common/modules/i18n/states/index';
 import { Actions, ActionTypes } from '@common/modules/i18n/actions/index';
 
 import { RESOLVE_LANGUAGE } from '@common/modules/i18n/services/services';
 
 export function reducer(
-    state: ILanguage = InitialState,
+    state: ILanguage = InitialI18NState,
     action: Actions
 ): ILanguage {
     switch (action.type) {

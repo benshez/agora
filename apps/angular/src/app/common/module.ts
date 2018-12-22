@@ -1,6 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import {
     reducers,
@@ -20,6 +21,7 @@ import {
         StoreModule.forRoot(reducers, { metaReducers }),
         EffectsModule.forRoot([]),
         EffectsModule.forFeature([I18NEffects]),
+        StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
         ...COMMON_MODULE_IMPORTS
     ],
     declarations: [...COMMON_MODULE_DECLARATIONS],
