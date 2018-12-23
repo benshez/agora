@@ -5,7 +5,6 @@ import { ConsoleService } from '@common/modules/logger/targets/console/services/
 import { WindowService } from '@common/modules/logger/targets/window/services/service';
 import { ILogEvent } from '@common/modules/logger/interfaces/ILogEvent';
 import { ELogLevel } from '@common/modules/logger/enums/ELogLevel';
-import { reducers, metaReducers } from '@common/modules/app/store';
 import { I18NEffects } from '@common/modules/i18n/utilities/common';
 import { TranslatePipe } from '@common/modules/app/filters/translate';
 import { DateFormatPipe } from '@common/modules/app/filters/dateFormat';
@@ -27,8 +26,6 @@ export {
     WindowService,
     ILogEvent,
     ELogLevel,
-    reducers,
-    metaReducers,
     I18NEffects,
     TranslatePipe,
     DateFormatPipe,

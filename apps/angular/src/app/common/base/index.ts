@@ -1,4 +1,4 @@
-export { IRootState } from '@common/base/interfaces/IRootState';
+
 export {
     GET_LANGUAGES,
     GET_LANGUAGE,

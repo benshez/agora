@@ -4,10 +4,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import {
-    reducers,
-    metaReducers,
+    // reducers,
+    //metaReducers,
     I18NEffects
 } from '@common/index';
+
+import { rootReducer, metaReducers } from '@common/base/reducers/reducers';
 
 import {
     COMMON_SERVICES,
@@ -18,7 +20,7 @@ import {
 
 @NgModule({
     imports: [
-        StoreModule.forRoot(reducers, { metaReducers }),
+        StoreModule.forRoot(rootReducer, { metaReducers }),
         EffectsModule.forRoot([]),
         EffectsModule.forFeature([I18NEffects]),
         StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),

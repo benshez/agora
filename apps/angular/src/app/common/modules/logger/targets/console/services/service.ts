@@ -7,8 +7,8 @@ import { AgoraSnackbarComponent } from '@common/modules/logger/targets/notificat
 @Injectable()
 export class ConsoleService implements IConsole {
     constructor(
-        @Inject(HttpClient) private http: HttpClient,
-        private snackBar: MatSnackBar) { }
+        @Inject(HttpClient) private http?: HttpClient,
+        private snackBar?: MatSnackBar) { }
 
     public log(_m: any): void { return; }
     public debug(_m: any): void { return; }
@@ -16,9 +16,11 @@ export class ConsoleService implements IConsole {
     public warn(_m: any): void { return; }
     public info(_m: any): void {
         console.info(_m);
-        this.snackBar.openFromComponent(AgoraSnackbarComponent, {
-            duration: 2000,
-            data: { message: _m, icon: 'info-circle' }
-        });
+        if (this.snackBar) {
+            this.snackBar.openFromComponent(AgoraSnackbarComponent, {
+                duration: 2000,
+                data: { message: _m, icon: 'info-circle' }
+            });
+        }
     }
 }

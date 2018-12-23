@@ -11,7 +11,7 @@ import _ from 'lodash';
 import { Config } from '@common/utils/Config';
 import { ILanguage, ITranslation } from '@common/modules/i18n/interfaces/index';
 import { WindowService } from '@common/services/window/service';
-import { IAppState } from '@common/modules/app/interfaces/index';
+import { IRootState } from '@common/base/interfaces/IRootState';
 import { ChangeAction } from '@common/modules/i18n/actions/index';
 
 import { en, af } from '@common/modules/i18n/languages';
@@ -55,11 +55,11 @@ export class I18NService {
         private router: Router,
         private activatedRoute: ActivatedRoute,
         private titleService: Title,
-        private store: Store<IAppState>,
+        private store: Store<IRootState>,
         private location: Location
     ) {
         this.store
-            .select(s => s.i18n)
+            .select(s => s.language)
             .subscribe((state: ILanguage) => {
                 //FILTERED_LANGUAGE(state.key);
                 RESOLVE_LANGUAGE(state.key);
@@ -71,7 +71,7 @@ export class I18NService {
 
     transform(value: string): string {
         this.store
-            .select(s => s.i18n)
+            .select(s => s.language)
             .subscribe((state: ILanguage) => {
                 this.transformedText = state.translation;
             });
