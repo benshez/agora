@@ -1,13 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material';
-import { I18nResolver } from 'i18n-ts';
 
 import { Config } from '@common/utils/Config';
 import { IAppRoute } from '@common/utils/interfaces/IAppRoute';
 import { I18NService } from '@common/modules/i18n/services';
 import { MenuService } from '@components/menu/components/services/services';
 
-import { en, af, LogService } from '@common/index';
+import { LogService } from '@common/index';
 
 @Component({
     moduleId: module.id,
@@ -24,15 +23,9 @@ export class AppComponent implements OnInit {
         private menuService: MenuService,
         private loggerService: LogService,
     ) {
-        const i18n = {
-            en: en,
-            af: af,
-            default: en
-        };
-        const messages = new I18nResolver(i18n, "af").translation;
-        //messages.translation.AppStarted('dasd')
+        const messages = languageService.getCurrentResolvedLanguage();
 
-        this.loggerService.info(messages.translation.AppStarted('dasd'))
+        this.loggerService.info(messages.translation.AppStarted(messages.translation.AppName))
     }
 
     ngOnInit() {

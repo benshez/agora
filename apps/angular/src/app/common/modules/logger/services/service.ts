@@ -5,7 +5,9 @@ import { Config } from '@common/utils/Config';
 import { LogTarget } from '@common/modules/logger/classes';
 import { ELogLevel } from '@common/modules/logger/enums/ELogLevel';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class LogService {
 
     constructor(@Inject(LogTarget) private targets: LogTarget[]) {

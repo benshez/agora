@@ -16,8 +16,6 @@ import { ChangeAction } from '@common/modules/i18n/actions/index';
 
 import { en, af } from '@common/modules/i18n/languages';
 
-export const DEFAULT_LANGUAGE = 'en';
-
 export function TITLE_CASE(input: string): string {
     if (!input) {
         return '';
@@ -43,12 +41,15 @@ export const LANGUAGES: Array<ILanguage> = [
     CURRENT_LANGUAGES.af
 ];
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class I18NService {
 
     private transformedText: ITranslation;
     private selectedRoutePath = '';
     private appNameKey = 'AppName';
+    private languageKey: string = FILTERED_DEFAULT_LANGUAGE.key;
 
     constructor(
         private win: WindowService,
@@ -61,12 +62,11 @@ export class I18NService {
         this.store
             .select(s => s.language)
             .subscribe((state: ILanguage) => {
-                //FILTERED_LANGUAGE(state.key);
                 RESOLVE_LANGUAGE(state.key);
                 if (Config.IS_WEB()) { this.onChangeTitle(this.location.path()) };
             });
 
-        this.store.dispatch(new ChangeAction(DEFAULT_LANGUAGE));
+        this.store.dispatch(new ChangeAction(FILTERED_DEFAULT_LANGUAGE.key));
     }
 
     transform(value: string): string {
@@ -81,6 +81,16 @@ export class I18NService {
 
     filterTransform(translation: ITranslation, key: string) {
         return _.get(translation, key);
+    }
+
+    getCurrentResolvedLanguage(): ILanguage {
+        this.store
+            .select(s => s.language)
+            .subscribe((state: ILanguage) => {
+                this.languageKey = state.key;
+            });
+
+        return RESOLVE_LANGUAGE(this.languageKey);
     }
 
     public onCreateRoute(): void {

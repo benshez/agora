@@ -7,8 +7,9 @@ import { reducer as languageReducer } from '@common/modules/i18n/reducers';
 import { reducer as userReducer } from '@views/login/components/reducers/reducers';
 import { ConsoleService } from '@common/modules/logger/targets/console/services/service';
 import { environment } from '@environments/environment';
+import { LOGGER_MODULE_FOR_ROOT } from '@common/modules/logger/module';
 
-export const rootReducer: ActionReducerMap<IRootState> = {
+export const APP_ROOT_REDUCER: ActionReducerMap<IRootState> = {
     router: routerReducer,
     language: languageReducer,
     user: userReducer
@@ -16,17 +17,27 @@ export const rootReducer: ActionReducerMap<IRootState> = {
 
 export function logger(reducer: ActionReducer<IRootState>): ActionReducer<IRootState> {
     return function (state: IRootState, action: any): IRootState {
-        const loggerService = new ConsoleService();
+        const loggerService = LOGGER_MODULE_FOR_ROOT
 
+        debugger
+        // const logger = LOGGER_MODULE_FOR_ROOT;
+
+        //const loggerService = new ConsoleService();
+        //debugger
+        //logger[0].providers[0].provide
         const currentState = state;
         const nextState = reducer(state, action);
-
-        loggerService.info({ Action: action });
-        loggerService.info({ 'Previous state': currentState })
-        loggerService.info({ 'Current state': nextState });
+        const logInfo = {
+            'state': {
+                'Action': action,
+                'Previous state': currentState,
+                'Current state': nextState
+            }
+        }
+        //loggerService.info(logInfo);
 
         return nextState;
     };
 }
 
-export const metaReducers: Array<MetaReducer<IRootState>> = !environment.production ? [logger, storeFreeze] : [];
+export const APP_META_REDUCER: Array<MetaReducer<IRootState>> = !environment.production ? [logger, storeFreeze] : [];
