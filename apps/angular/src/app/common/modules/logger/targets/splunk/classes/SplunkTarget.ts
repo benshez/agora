@@ -1,4 +1,6 @@
-import { Injectable, Provider } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SplunkApiInterceptor } from '@common/modules/logger/targets/splunk/interceptors/SplunkInterceptor';
 
 import {
     LogTargetBase,
@@ -9,6 +11,7 @@ import {
 import { ILogEvent } from '@common/modules/logger/interfaces/ILogEvent';
 import { ELogLevel } from '@common/modules/logger/enums/ELogLevel';
 import { SplunkService } from '@common/modules/logger/targets/splunk/services/service';
+import { Config } from '@common/utils/Config';
 
 @Injectable()
 export class SplunkTarget extends LogTargetBase {
@@ -38,16 +41,18 @@ export class SplunkTarget extends LogTargetBase {
     }
 }
 
-export function createSplunkTarget(logLevel: ELogLevel, splunkService: SplunkService) {
-    return new SplunkTarget(splunkService, { minLogLevel: logLevel });
+export function provideTarget() {
+    return [
+        { provide: SplunkService, deps: [HttpClient], useFactory: (createService) },
+        { provide: LogTarget, multi: true, deps: [SplunkService], useFactory: (createTarget) },
+        { provide: HTTP_INTERCEPTORS, useClass: SplunkApiInterceptor, multi: true }
+    ]
 }
 
-export function provideSplunkTarget(logLevel: ELogLevel): Provider {
-    return {
-        provide: LogTarget,
-        deps: [SplunkService],
-        multi: true,
-        useFactory: (c: SplunkService) => new SplunkTarget(c, { minLogLevel: logLevel })
-    };
+export function createService(http: HttpClient) {
+    return new SplunkService(http);
 }
 
+export function createTarget(service: SplunkService) {
+    return new SplunkTarget(service, Config.MIN_LOG_LEVEL());
+}

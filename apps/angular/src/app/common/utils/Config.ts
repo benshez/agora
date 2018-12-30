@@ -2,6 +2,7 @@ import { InjectionToken } from '@angular/core';
 import _ from 'lodash';
 
 import { IPlatforms } from '@common/utils/interfaces/IPlatforms';
+import { ELogLevel } from '@common/modules/logger/enums/ELogLevel';
 
 export let APP_CONFIG = new InjectionToken('Config');
 
@@ -52,6 +53,10 @@ export class Config {
 
     public static SPLUNK_TOKEN(): string {
         return '8328e4ff-31b4-4dc7-822d-595b30b7d386';
+    }
+
+    public static MIN_LOG_LEVEL() {
+        return { minLogLevel: ELogLevel.Debug }
     }
 
     public static ROUTES(): Array<any> {

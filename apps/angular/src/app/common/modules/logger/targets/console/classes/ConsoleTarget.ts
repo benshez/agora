@@ -1,4 +1,6 @@
-import { Injectable, Provider } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material';
 
 import {
     LogTargetBase,
@@ -8,7 +10,7 @@ import {
 import { ILogEvent } from '@common/modules/logger/interfaces/ILogEvent';
 import { ELogLevel } from '@common/modules/logger/enums/ELogLevel';
 import { ConsoleService } from '@common/modules/logger/targets/console/services/service';
-import { NotificationService } from '@common/modules/logger/targets/notification/services/service'
+import { Config } from '@common/utils/Config';
 
 @Injectable()
 export class ConsoleTarget extends LogTargetBase {
@@ -38,14 +40,17 @@ export class ConsoleTarget extends LogTargetBase {
     }
 }
 
-export function createConsoleTarget(logLevel: ELogLevel, consoleService: ConsoleService) {
-    return new ConsoleTarget(consoleService, { minLogLevel: logLevel });
+export function provideTarget() {
+    return [
+        { provide: ConsoleService, deps: [HttpClient, MatSnackBar], useFactory: (createService) },
+        { provide: LogTarget, multi: true, deps: [ConsoleService], useFactory: (createTarget) },
+    ]
 }
 
-export function provideConsoleTarget(logLevel: ELogLevel): Provider {
-    return {
-        provide: LogTarget, deps: [ConsoleService],
-        multi: true,
-        useFactory: (c: ConsoleService) => new ConsoleTarget(c, { minLogLevel: logLevel })
-    };
+export function createService(http: HttpClient, snackBar: MatSnackBar) {
+    return new ConsoleService(http, snackBar);
+}
+
+export function createTarget(service: ConsoleService) {
+    return new ConsoleTarget(service, Config.MIN_LOG_LEVEL());
 }

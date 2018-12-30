@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 import { IConsole } from '@common/modules/logger/targets/console/interfaces/IConsole';
 import { AgoraSnackbarComponent } from '@common/modules/logger/targets/notification/components/component';
+import { Config } from '@common/utils/Config';
 
 @Injectable()
 export class ConsoleService implements IConsole {
@@ -18,7 +19,7 @@ export class ConsoleService implements IConsole {
         console.info(_m);
         if (this.snackBar) {
             this.snackBar.openFromComponent(AgoraSnackbarComponent, {
-                duration: 2000,
+                duration: Config.SNACK_BAR_DURATION(),
                 data: { message: _m, icon: 'info-circle' }
             });
         }

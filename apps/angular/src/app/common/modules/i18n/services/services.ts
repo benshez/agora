@@ -5,15 +5,12 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { map, filter, scan, mergeMap } from 'rxjs/operators';
 import { I18nResolver } from 'i18n-ts';
-
 import _ from 'lodash';
 
 import { Config } from '@common/utils/Config';
 import { ILanguage, ITranslation } from '@common/modules/i18n/interfaces/index';
-import { WindowService } from '@common/services/window/service';
 import { IRootState } from '@common/base/interfaces/IRootState';
 import { ChangeAction } from '@common/modules/i18n/actions/index';
-
 import { en, af } from '@common/modules/i18n/languages';
 
 export function TITLE_CASE(input: string): string {
@@ -52,7 +49,6 @@ export class I18NService {
     private languageKey: string = FILTERED_DEFAULT_LANGUAGE.key;
 
     constructor(
-        private win: WindowService,
         private router: Router,
         private activatedRoute: ActivatedRoute,
         private titleService: Title,

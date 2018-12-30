@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@shared/modules/material/module';
 
 import { AgoraSnackbarComponent } from '@common/modules/logger/targets/notification/components/component';

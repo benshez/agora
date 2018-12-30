@@ -5,7 +5,6 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import { IRootState } from '@common/base/interfaces/IRootState';
 import { reducer as languageReducer } from '@common/modules/i18n/reducers';
 import { reducer as userReducer } from '@views/login/components/reducers/reducers';
-import { ConsoleService } from '@common/modules/logger/targets/console/services/service';
 import { environment } from '@environments/environment';
 import { LOGGER_MODULE_FOR_ROOT } from '@common/modules/logger/module';
 
@@ -15,28 +14,34 @@ export const APP_ROOT_REDUCER: ActionReducerMap<IRootState> = {
     user: userReducer
 };
 
+let loggerModule = null;
+let loggerService = null;
+let loggerHttp = null;
+let loggerMatSnackBar = null;
+
 export function logger(reducer: ActionReducer<IRootState>): ActionReducer<IRootState> {
     return function (state: IRootState, action: any): IRootState {
-        const loggerService = LOGGER_MODULE_FOR_ROOT
+        if (!loggerModule) loggerModule = LOGGER_MODULE_FOR_ROOT;
+        if (!loggerService) {
+            if (!loggerHttp) loggerHttp = loggerModule[0].providers[0].deps[0];
+            if (!loggerMatSnackBar) loggerMatSnackBar = loggerModule[0].providers[0].deps[1];
 
-        debugger
-        // const logger = LOGGER_MODULE_FOR_ROOT;
+            loggerService = new loggerModule[0].providers[0].provide(loggerHttp);
+        }
+        const previousState = state;
+        const currentState = reducer(state, action);
 
-        //const loggerService = new ConsoleService();
-        //debugger
-        //logger[0].providers[0].provide
-        const currentState = state;
-        const nextState = reducer(state, action);
         const logInfo = {
             'state': {
                 'Action': action,
-                'Previous state': currentState,
-                'Current state': nextState
+                'Previous state': previousState,
+                'Current state': currentState
             }
         }
-        //loggerService.info(logInfo);
 
-        return nextState;
+        loggerService.info(logInfo);
+
+        return currentState;
     };
 }
 
